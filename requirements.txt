@@ -1,0 +1,6 @@
+rasa==3.6.15
+rasa-sdk==3.6.2
+aiohttp
+flask
+requests
+tensorflow~=2.11.0
