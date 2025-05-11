@@ -28,7 +28,6 @@ Below are the dependencies listed in `requirements.txt`:
 - requests
 - tensorflow~=2.11.0
 
-
 ## 📁 Project Folder Structure
 
 ```
