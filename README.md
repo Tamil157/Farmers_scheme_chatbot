@@ -59,7 +59,7 @@ FARMERS_SCHEME_CHATBOT/
 
 ## Clone the Repository
 
-Clone the repository from GitHub:
+1. Clone the repository from GitHub:
 <pre> <code>git clone https://github.com/Tamil1157/Farmers_scheme_chatbot.git</code> </pre>
 2. Navigate into the project directory:
 <pre> <code>cd Farmers_scheme_chatbot </code> </pre>
