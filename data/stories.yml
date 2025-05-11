@@ -1,0 +1,267 @@
+version: "3.1"
+stories:
+- story: Greet and ask scheme in English
+  steps:
+  - intent: greet
+  - action: action_respond
+  - intent: ask_agri_mechanization_details
+  - action: action_respond
+
+- story: Greet and ask scheme in Tamil
+  steps:
+  - intent: greet
+  - action: action_respond
+  - intent: inform
+    entities:
+    - name: language
+      value: tamil
+  - action: action_set_language
+  - action: action_respond
+  - intent: ask_solar_pumps_details
+  - action: action_respond
+
+- story: Goodbye
+  steps:
+  - intent: goodbye
+  - action: action_respond
+
+- story: Ask for details
+  steps:
+  - intent: inform
+  - action: action_respond
+  - intent: ask_pm_kisan_details
+  - action: action_respond
+
+# Agricultural Mechanization
+- story: Ask agri mechanization details
+  steps:
+  - intent: ask_agri_mechanization_details
+  - action: action_respond
+- story: Ask agri mechanization eligibility
+  steps:
+  - intent: ask_agri_mechanization_eligibility
+  - action: action_respond
+- story: Ask agri mechanization documents
+  steps:
+  - intent: ask_agri_mechanization_documents
+  - action: action_respond
+- story: Ask agri mechanization apply
+  steps:
+  - intent: ask_agri_mechanization_apply
+  - action: action_respond
+
+# Solar Pumps
+- story: Ask solar pumps details
+  steps:
+  - intent: ask_solar_pumps_details
+  - action: action_respond
+- story: Ask solar pumps eligibility
+  steps:
+  - intent: ask_solar_pumps_eligibility
+  - action: action_respond
+- story: Ask solar pumps documents
+  steps:
+  - intent: ask_solar_pumps_documents
+  - action: action_respond
+- story: Ask solar pumps apply
+  steps:
+  - intent: ask_solar_pumps_apply
+  - action: action_respond
+
+# Value Addition
+- story: Ask value addition details
+  steps:
+  - intent: ask_value_addition_details
+  - action: action_respond
+- story: Ask value addition eligibility
+  steps:
+  - intent: ask_value_addition_eligibility
+  - action: action_respond
+- story: Ask value addition documents
+  steps:
+  - intent: ask_value_addition_documents
+  - action: action_respond
+- story: Ask value addition apply
+  steps:
+  - intent: ask_value_addition_apply
+  - action: action_respond
+
+# Integrated Development
+- story: Ask integrated development details
+  steps:
+  - intent: ask_integrated_development_details
+  - action: action_respond
+- story: Ask integrated development eligibility
+  steps:
+  - intent: ask_integrated_development_eligibility
+  - action: action_respond
+- story: Ask integrated development documents
+  steps:
+  - intent: ask_integrated_development_documents
+  - action: action_respond
+- story: Ask integrated development apply
+  steps:
+  - intent: ask_integrated_development_apply
+  - action: action_respond
+
+# Solar Dryers
+- story: Ask solar dryers details
+  steps:
+  - intent: ask_solar_dryers_details
+  - action: action_respond
+- story: Ask solar dryers eligibility
+  steps:
+  - intent: ask_solar_dryers_eligibility
+  - action: action_respond
+- story: Ask solar dryers documents
+  steps:
+  - intent: ask_solar_dryers_documents
+  - action: action_respond
+- story: Ask solar dryers apply
+  steps:
+  - intent: ask_solar_dryers_apply
+  - action: action_respond
+
+# Electric Pumps
+- story: Ask electric pumps details
+  steps:
+  - intent: ask_electric_pumps_details
+  - action: action_respond
+- story: Ask electric pumps eligibility
+  steps:
+  - intent: ask_electric_pumps_eligibility
+  - action: action_respond
+- story: Ask electric pumps documents
+  steps:
+  - intent: ask_electric_pumps_documents
+  - action: action_respond
+- story: Ask electric pumps apply
+  steps:
+  - intent: ask_electric_pumps_apply
+  - action: action_respond
+
+# Micro Irrigation
+- story: Ask micro irrigation details
+  steps:
+  - intent: ask_micro_irrigation_details
+  - action: action_respond
+- story: Ask micro irrigation eligibility
+  steps:
+  - intent: ask_micro_irrigation_eligibility
+  - action: action_respond
+- story: Ask micro irrigation documents
+  steps:
+  - intent: ask_micro_irrigation_documents
+  - action: action_respond
+- story: Ask micro irrigation apply
+  steps:
+  - intent: ask_micro_irrigation_apply
+  - action: action_respond
+
+# Auto Pump Control
+- story: Ask auto pump control details
+  steps:
+  - intent: ask_auto_pump_control_details
+  - action: action_respond
+- story: Ask auto pump control eligibility
+  steps:
+  - intent: ask_auto_pump_control_eligibility
+  - action: action_respond
+- story: Ask auto pump control documents
+  steps:
+  - intent: ask_auto_pump_control_documents
+  - action: action_respond
+- story: Ask auto pump control apply
+  steps:
+  - intent: ask_auto_pump_control_apply
+  - action: action_respond
+
+# Sugarcane Machinery
+- story: Ask sugarcane machinery details
+  steps:
+  - intent: ask_sugarcane_machinery_details
+  - action: action_respond
+- story: Ask sugarcane machinery eligibility
+  steps:
+  - intent: ask_sugarcane_machinery_eligibility
+  - action: action_respond
+- story: Ask sugarcane machinery documents
+  steps:
+  - intent: ask_sugarcane_machinery_documents
+  - action: action_respond
+- story: Ask sugarcane machinery apply
+  steps:
+  - intent: ask_sugarcane_machinery_apply
+  - action: action_respond
+
+# Water Modernization
+- story: Ask water modernization details
+  steps:
+  - intent: ask_water_modernization_details
+  - action: action_respond
+- story: Ask water modernization eligibility
+  steps:
+  - intent: ask_water_modernization_eligibility
+  - action: action_respond
+- story: Ask water modernization documents
+  steps:
+  - intent: ask_water_modernization_documents
+  - action: action_respond
+- story: Ask water modernization apply
+  steps:
+  - intent: ask_water_modernization_apply
+  - action: action_respond
+
+# Land Development
+- story: Ask land development details
+  steps:
+  - intent: ask_land_development_details
+  - action: action_respond
+- story: Ask land development eligibility
+  steps:
+  - intent: ask_land_development_eligibility
+  - action: action_respond
+- story: Ask land development documents
+  steps:
+  - intent: ask_land_development_documents
+  - action: action_respond
+- story: Ask land development apply
+  steps:
+  - intent: ask_land_development_apply
+  - action: action_respond
+
+# Solar Fencing
+- story: Ask solar fencing details
+  steps:
+  - intent: ask_solar_fencing_details
+  - action: action_respond
+- story: Ask solar fencing eligibility
+  steps:
+  - intent: ask_solar_fencing_eligibility
+  - action: action_respond
+- story: Ask solar fencing documents
+  steps:
+  - intent: ask_solar_fencing_documents
+  - action: action_respond
+- story: Ask solar fencing apply
+  steps:
+  - intent: ask_solar_fencing_apply
+  - action: action_respond
+
+# PM-KISAN
+- story: Ask pm kisan details
+  steps:
+  - intent: ask_pm_kisan_details
+  - action: action_respond
+- story: Ask pm kisan eligibility
+  steps:
+  - intent: ask_pm_kisan_eligibility
+  - action: action_respond
+- story: Ask pm kisan documents
+  steps:
+  - intent: ask_pm_kisan_documents
+  - action: action_respond
+- story: Ask pm kisan apply
+  steps:
+  - intent: ask_pm_kisan_apply
+  - action: action_respond

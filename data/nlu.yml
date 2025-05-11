@@ -1,0 +1,1635 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hello
+    - hi
+    - hey
+    - good morning
+    - good evening
+    - வணக்கம்
+    - ஹாய்
+    - வாழ்த்துக்கள்
+    - காலை வணக்கம்
+    - மாலை வணக்கம்
+
+- intent: goodbye
+  examples: |
+    - goodbye
+    - bye
+    - see you later
+    - take care
+    - thanks and bye
+    - நன்றி
+    - விடைபெறுகிறேன்
+    - பிறகு பார்க்கலாம்
+    - பை
+    - கவனமாக இரு
+
+- intent: set_language
+  examples: |
+    - I prefer Tamil language
+    - I want to use Tamil
+    - Switch to Tamil
+    - Please use Tamil
+    - Tamil language
+    - தமிழ் மொழி
+    - தமிழுக்கு மாறவும்
+    - I prefer English language
+    - I want to use English
+    - Switch to English
+    - Please use English
+    - English language
+    - ஆங்கிலம்
+    - ஆங்கிலத்திற்கு மாறவும்
+    - நான் தமிழ் மொ
+# Agricultural Mechanization
+- intent: ask_agri_mechanization
+  examples: |
+    - How to get tractor subsidy?
+    - Tell me about agricultural mechanization
+    - Subsidy for farm equipment
+    - How can I get a tractor rental?
+    - Mechanization scheme details
+    - டிராக்டர் மானியம் எப்படி பெறுவது?
+    - வேளாண்மை இயந்திரமயமாக்கல் பற்றி சொல்லுங்கள்
+    - பண்ணை உபகரணங்களுக்கான மானியம்
+    - டிராக்டர் வாடகை எப்படி பெறுவது?
+    - இயந்திரமயமாக்கல் திட்ட விவரங்கள்
+    - Tractor subsidy in Tamil Nadu
+    - Free tractor for farmers
+    - Traktr subsedy Tamilnadu
+    - டிராக்டர் மானியம் தமிழ்நாடு
+    - Tractor maaniyam tamilnadu
+    - டிராக்டர் இலவசமா கிடைக்குமா
+    - Tractor ilavasama kidaikkuma
+    - மானியம் எப்டி கிடைக்கும்
+    - Maaniyam eppadi kidaikkum
+    - How to apply for mechanization scheme
+    - Mechanisation plan detals
+    - Mechanization
+    - இயந்திரமயமாக்கல் திட்ட விவரங்கள்
+    - Iyandhiramayamakkal thitta vivarangal
+    - இயந்தரமயமாகல் திட்டம
+    - Iyandharamayamakkal thittam
+    - விவசாய இயந்திர திட்டங்கள்
+    - Vivasaya iyandhira thittangal
+    - tractor
+    - machinery
+    - tools
+    - scheme
+    - rental
+    - grant
+    - loan
+    - equipment
+    - mechanization
+    - மானியம்
+    - maaniyam
+    - டிராக்டர்
+
+
+- intent: ask_agri_mechanization_details
+  examples: |
+    - What is the agricultural mechanization scheme?
+    - Tell me about farm mechanization subsidies
+    - Details of tractor subsidy scheme
+    - Explain agricultural mechanization program
+    - What benefits does mechanization offer?
+    - வேளாண்மை இயந்திரமயமாக்கல் திட்டம் என்றால் என்ன?
+    - பண்ணை இயந்திரமயமாக்கல் மானியங்கள் பற்றி சொல்லுங்கள்
+    - டிராக்டர் மானிய திட்ட விவரங்கள்
+    - வேளாண்மை இயந்திரமயமாக்கல் திட்டத்தை விளக்குங்கள்
+    - இயந்திரமயமாக்கல் என்ன பயன்களை வழங்குகிறது?
+
+- intent: ask_agri_mechanization_eligibility
+  examples: |
+    - Who is eligible for tractor subsidy?
+    - Eligibility for agricultural mechanization scheme
+    - Can small farmers get mechanization subsidy?
+    - Who can apply for farm equipment subsidy?
+    - Criteria for mechanization scheme
+    - டிராக்டர் மானியத்திற்கு யார் தகுதியானவர்?
+    - வேளாண்மை இயந்திரமயமாக்கல் திட்டத்திற்கு தகுதி
+    - சிறு விவசாயிகள் இயந்திரமயமாக்கல் மானியம் பெற முடியுமா?
+    - பண்ணை உபகரண மானியத்திற்கு யார் விண்ணப்பிக்கலாம்?
+    - இயந்திரமயமாக்கல் திட்டத்திற்கு அளவுகோல்கள்
+    - Who is eligible for tractor subsidy in Tamil Nadu
+    - Eligibility for farm mechanization scheme
+    - Can small farmers get tractor subsidy
+    - Who qualifies for agricultural equipment subsidy
+    - Criteria for mechanization scheme in Tamil Nadu
+    - Documents needed for tractor subsidy
+    - Is SC/ST eligible for farm equipment subsidy
+    - Farmer eligibility for machinery grant
+    - How to qualify for tractor scheme
+    - Who can apply for farm tools subsidy
+    - Free tractor scheme who can get
+    - Govt scheme eligibility for farmers
+    - Can I get subsidy for power tiller
+    - Small farmer tractor subsidy rules
+    - Mechanization scheme who is eligible
+    - Farm equipment subsidy eligibility criteria
+    - Tractor subsidy for marginal farmers
+    - Who gets priority in mechanization scheme
+    - Eligibility for renting tractor under scheme
+    - Can women farmers get machinery subsidy
+    - Subsidy scheme qualify small farmer
+    - Traktr subsedy who can apply
+    - Farmar qualify for mechenization
+    - டிராக்டர் மானியத்திற்கு யார் தகுதியானவர்
+    - விவசாய இயந்திரமயமாக்கல் திட்ட தகுதி
+    - சிறு விவசாயிகள் டிராக்டர் மானியம் பெறலாமா
+    - விவசாய உபகரண மானியத்திற்கு யார் தகுதி
+    - தமிழ்நாட்டில் இயந்திரமயமாக்கல் திட்ட விதிகள்
+    - டிராக்டர் மானியத்திற்கு தேவையான ஆவணங்கள்
+    - SC/ST விவசாயிகள் உபகரண மானியம் பெறலாமா
+    - இயந்திர மானியத்திற்கு விவசாயி தகுதி
+    - டிராக்டர் திட்டத்திற்கு எப்படி தகுதி பெறுவது
+    - விவசாய கருவி மானியத்திற்கு யார் விண்ணப்பிக்கலாம்
+    - இலவச டிராக்டர் திட்டம் யாருக்கு கிடைக்கும்
+    - அரசு திட்டங்களுக்கு விவசாயி தகுதி
+    - பவர் டில்லர் மானியம் பெற முடியுமா
+    - சிறு விவசாயி டிராக்டர் மானிய விதிகள்
+    - இயந்திரமயமாக்கல் திட்டம் யார் தகுதியானவர்
+    - உபகரண மானிய தகுதி விவரங்கள்
+    - குறு விவசாயிகளுக்கு டிராக்டர் மானியம்
+    - இயந்திர திட்டத்தில் முன்னுரிமை யாருக்கு
+    - டிராக்டர் வாடகை திட்டத்திற்கு தகுதி
+    - பெண் விவசாயிகளுக்கு மானியம் கிடைக்குமா
+    - மானியம் யாருக்கு கிடைக்கும்
+    - maaniyam yaarukku kidaikkum
+    - டிரக்டர் மானியம தகுதி
+    - tiraktr maaniyam thaguthi
+    - இயந்தரமயமாகல் தகுதி
+    - iyandharamayamakkal thaguthi
+    - விவசாயி உபகரன தகுதி
+    - vivasayi ubakaran thaguthi
+    - மானியம எப்டி தகுதி
+    - maaniyam eppadi thaguthi
+    - திட்டம யார் தகுதி
+    - thittam yaar thaguthi
+
+- intent: ask_agri_mechanization_documents
+  examples: |
+    - What documents are needed for tractor subsidy?
+    - Documents required for mechanization scheme
+    - Paperwork for farm equipment subsidy
+    - List documents for agricultural mechanization
+    - What do I need to submit for tractor rental?
+    - டிராக்டர் மானியத்திற்கு என்ன ஆவணங்கள் தேவை?
+    - இயந்திரமயமாக்கல் திட்டத்திற்கு தேவையான ஆவணங்கள்
+    - பண்ணை உபகரண மானியத்திற்கு ஆவணங்கள்
+    - வேளாண்மை இயந்திரமயமாக்கலுக்கான ஆவணங்கள் பட்டியல்
+    - டிராக்டர் வாடகைக்கு நான் என்ன சமர்ப்பிக்க வேண்டும்?
+    - What documents are needed for tractor subsidy in Tamil Nadu
+    - Documents required for farm mechanization scheme
+    - Papers for applying tractor subsidy
+    - What do I need to submit for equipment subsidy
+    - List of documents for agricultural mechanization
+    - Tractor scheme application documents
+    - Docs needed for power tiller subsidy
+    - Documents for farm equipment grant
+    - What papers for tractor subsidy scheme
+    - Required documents for machinery subsidy
+    - Free tractor scheme document list
+    - Govt scheme documents for farmers
+    - Papers needed to get tractor subsidy
+    - Documents for small farmer subsidy
+    - Mechanization scheme document requirements
+    - Farm tools subsidy application papers
+    - Tractor subsidy documents for marginal farmers
+    - What to submit for mechanization scheme
+    - Documents for renting tractor under scheme
+    - Papers for women farmers subsidy
+    - Subsidy scheme docs needed
+    - Traktr subsedy documents
+    - Farmar papers for mechenization
+    - Subsidie scheme documnts
+    - Mechanisation schem papers
+    - Tracter subsity dokuments
+    - Documnts for farm tools schem
+    - Goverment scheme papers need
+    - Subsdy for tractor docs
+    - Farm equipmnt subsidy papers
+    - டிராக்டர் மானியத்திற்கு தேவையான ஆவணங்கள்
+    - விவசாய இயந்திரமயமாக்கல் திட்ட ஆவணங்கள்
+    - டிராக்டர் மானியம் விண்ணப்பிக்க தேவையான பேப்பர்கள்
+    - உபகரண மானியத்திற்கு என்ன ஆவணங்கள் தேவை
+    - விவசாய இயந்திர திட்டத்திற்கு ஆவண பட்டியல்
+    - டிராக்டர் திட்ட விண்ணப்ப ஆவணங்கள்
+    - பவர் டில்லர் மானியத்திற்கு தேவையான பேப்பர்கள்
+    - விவசாய உபகரண மானியத்திற்கு ஆவணங்கள்
+    - டிராக்டர் மானிய திட்டத்திற்கு என்ன பேப்பர்கள்
+    - இயந்திர மானியத்திற்கு தேவையான ஆவணங்கள்
+    - இலவச டிராக்டர் திட்ட ஆவணங்கள்
+    - அரசு திட்டங்களுக்கு விவசாயி ஆவணங்கள்
+    - டிராக்டர் மானியம் பெற தேவையான பேப்பர்கள்
+    - சிறு விவசாயி மானிய ஆவணங்கள்
+    - இயந்திரமயமாக்கல் திட்ட ஆவணத் தேவைகள்
+    - விவசாய கருவி மானிய விண்ணப்ப பேப்பர்கள்
+    - குறு விவசாயிகளுக்கு டிராக்டர் மானிய ஆவணங்கள்
+    - இயந்திர திட்டத்திற்கு என்ன சமர்ப்பிக்க வேண்டும்
+    - டிராக்டர் வாடகை திட்ட ஆவணங்கள்
+    - பெண் விவசாயிகளுக்கு மானிய ஆவணங்கள்
+    - மானிய ஆவணங்கள் என்ன
+    - maaniyam aavanangal enna
+    - டிரக்டர் மானியம ஆவணங்கள்
+    - tiraktr maaniyam aavanangal
+    - இயந்தரமயமாகல் ஆவணங்கள்
+    - iyandharamayamakkal aavanangal
+    - விவசாயி உபகரன ஆவணங்கள்
+    - vivasayi ubakaran aavanangal
+    - மானியம ஆவணங்கள் எப்டி
+    - maaniyam aavanangal eppadi
+- intent: ask_agri_mechanization_apply
+  examples: |
+    - How to apply for agricultural mechanization subsidy?
+    - Where can I apply for tractor subsidy?
+    - Application process for farm equipment subsidy
+    - Website for mechanization scheme application
+    - How to get mechanization subsidy in [Thanjavur](district)?
+    - வேளாண்மை இயந்திரமயமாக்கல் மானியத்திற்கு எப்படி விண்ணப்பிப்பது?
+    - டிராக்டர் மானியத்திற்கு எங்கு விண்ணப்பிக்கலாம்?
+    - பண்ணை உபகரண மானியத்திற்கு விண்ணப்ப செயல்முறை
+    - இயந்திரமயமாக்கல் திட்ட விண்ணப்பத்திற்கு இணையதளம்
+    - [தஞ்சாவூரில்](district) இயந்திரமயமாக்கல் மானியம் எப்படி பெறுவது?
+    - How to apply for tractor subsidy in Tamil Nadu
+    - Process to apply for farm mechanization scheme
+    - How do I apply for equipment subsidy
+    - Steps to get tractor subsidy
+    - Where to apply for agricultural mechanization
+    - Apply for tractor scheme online
+    - How to submit application for power tiller subsidy
+    - Application process for farm equipment grant
+    - How to register for tractor subsidy scheme
+    - Where to submit papers for machinery subsidy
+    - How to get free tractor scheme application
+    - Govt scheme application process for farmers
+    - How to apply for tractor subsidy online
+    - Steps for small farmer subsidy application
+    - Mechanization scheme application procedure
+    - How to apply for farm tools subsidy
+    - Tractor subsidy application for marginal farmers
+    - Where to apply for mechanization scheme
+    - How to apply for tractor rental scheme
+    - Application process for women farmers subsidy
+    - How to grab subsidy scheme application
+    - Traktr subsedy how apply
+    - Farmar apply for mechenization
+    - Subsidie scheme apply process
+    - Mechanisation schem how to apply
+    - Tracter subsity aplication
+    - Apply for farm tools schem
+    - டிராக்டர் மானியத்திற்கு எப்படி விண்ணப்பிக்க வேண்டும்
+    - விவசாய இயந்திரமயமாக்கல் திட்ட விண்ணப்ப முறை
+    - உபகரண மானியத்திற்கு எப்படி விண்ணப்பிப்பது
+    - டிராக்டர் மானியம் பெறுவதற்கு படிகள்
+    - விவசாய இயந்திர திட்டத்திற்கு எங்கு விண்ணப்பிக்க வேண்டும்
+    - டிராக்டர் திட்டத்திற்கு ஆன்லைனில் விண்ணப்பிக்க
+    - பவர் டில்லர் மானிய விண்ணப்ப முறை
+    - விவசாய உபகரண மானியத்திற்கு விண்ணப்ப செயல்முறை
+    - டிராக்டர் மானிய திட்டத்தில் பதிவு செய்வது எப்படி
+    - இயந்திர மானியத்திற்கு ஆவணங்கள் எங்கு சமர்ப்பிக்க வேண்டும்
+    - இலவச டிராக்டர் திட்ட விண்ணப்பம் எப்படி
+    - அரசு திட்டங்களுக்கு விவசாயி விண்ணப்ப முறை
+    - டிராக்டர் மானியத்திற்கு ஆன்லைனில் எப்படி விண்ணப்பிப்பது
+    - சிறு விவசாயி மானிய விண்ணப்ப படிகள்
+    - இயந்திரமயமாக்கல் திட்ட விண்ணப்ப செயல்முறை
+    - விவசாய கருவி மானியத்திற்கு எப்படி விண்ணப்பிக்க
+    - குறு விவசாயிகளுக்கு டிராக்டர் மானிய விண்ணப்பம்
+    - இயந்திர திட்டத்திற்கு எங்கு விண்ணப்பிக்க வேண்டும்
+    - டிராக்டர் வாடகை திட்ட விண்ணப்ப முறை
+    - பெண் விவசாயிகளுக்கு மானிய விண்ணப்ப செயல்முறை
+    - மானியம் எப்படி விண்ணப்பிக்க
+    - maaniyam eppadi vinnappikka
+    - டிரக்டர் மானியம விண்ணப்பம்
+    - tiraktr maaniyam vinnappam
+    - இயந்தரமயமாகல் விண்ணப்பம்
+    - iyandharamayamakkal vinnappam
+    - விவசாயி உபகரன விண்ணப்பம்
+    - vivasayi ubakaran vinnappam
+    - மானியம விண்ணப்பம் எப்டி
+# Solar Pumps
+- intent: ask_solar_pumps_details
+  examples: |
+    - What are the details of solar pump subsidy in Tamil Nadu
+    - Information about solar pump scheme
+    - Benefits of solar pump scheme for farmers
+    - How much subsidy for solar pump in Tamil Nadu
+    - Details of PM-KUSUM solar pump scheme
+    - Cost of solar pump after subsidy
+    - Features of solar pump scheme
+    - Solar pump scheme for small farmers
+    - What is included in solar pump subsidy
+    - Solar pump scheme implementation in Tamil Nadu
+    - Government support for solar pumps
+    - Solar pump subsidy amount and benefits
+    - Details of solar pump scheme for marginal farmers
+    - Is there a free solar pump scheme
+    - Solar pump scheme coverage and benefits
+    - How does solar pump scheme work
+    - Solar pump subsidy details for women farmers
+    - Specifications of solar pumps under scheme
+    - Solar pump scheme terms and conditions
+    - What is the solar pump subsidy process
+    - Tell me about solar powered pumpsets
+    - Explain the solar pump program
+    - Benefits of solar pumps for farmers
+    - Solar pumps in [Thanjavur](district)
+    - Solar pum scheme info
+    - Soler pump subsedy detals
+    - Subsity for solar pum info
+    - Solar pomp scheme detalis
+    - Solar pump sheme benifits
+    - Goverment solar pum scheme info
+    - Farmar solar pump scheme
+    - What is the solar pump scheme?
+    - சூரிய பம்பு திட்டம் என்றால் என்ன?
+    - சூரிய சக்தி பம்புசெட்டுகள் விவரங்கள்
+    - சூரிய பம்பு மானியங்கள் பற்றி சொல்லுங்கள்
+    - சூரிய பம்பு திட்டத்தை விளக்குங்கள்
+    - விவசாயிகளுக்கு சூரிய பம்புகளின் பயன்கள்
+    - தஞ்சாவூரில் district சூரிய பம்புகள்
+    - சோலார் பம்ப் மானிய விவரங்கள் தமிழ்நாட்டில்
+    - சோலார் பம்ப் திட்டம் பற்றிய தகவல்கள்
+    - விவசாயிகளுக்கு சோலார் பம்ப் திட்ட நன்மைகள்
+    - தமிழ்நாட்டில் சோலார் பம்புக்கு எவ்வளவு மானியம்
+    - PM-KUSUM சோலார் பம்ப் திட்ட விவரங்கள்
+    - மானியத்திற்கு பிறகு சோலார் பம்ப் விலை
+    - சோலார் பம்ப் திட்டத்தின் அம்சங்கள்
+    - சிறு விவசாயிகளுக்கு சோலார் பம்ப் திட்டம்
+    - சோலார் பம்ப் மானியத்தில் என்ன உள்ளது
+    - தமிழ்நாட்டில் சோலார் பம்ப் திட்ட செயல்பாடு
+    - சோலார் பம்புகளுக்கு அரசு உதவி
+    - சோலார் பம்ப் மானிய தொகை மற்றும் நன்மைகள்
+    - குறு விவசாயிகளுக்கு சோலார் பம்ப் திட்ட விவரங்கள்
+    - இலவச சோலார் பம்ப் திட்டம் உள்ளதா
+    - சோலார் பம்ப் திட்ட பரவல் மற்றும் நன்மைகள்
+    - சோலார் பம்ப் திட்டம் எப்படி செயல்படுகிறது
+    - பெண் விவசாயிகளுக்கு சோலார் பம்ப் மானிய விவரங்கள்
+    - திட்டத்தில் சோலார் பம்புகளின் விவரக்குறிப்புகள்
+    - சோலார் பம்ப் திட்ட விதிமுறைகள்
+    - சோலர் பம்ப திட்ட தகவல்
+    - solar pamb thitta thagaval
+    - சோலர் பம்பு மானியம விவரங்கள்
+    - solar pambu maaniyam vivarangal
+    - சோலர் பம்ப திட்ட நன்மைகள்
+    - solar pamb thitta nanmaigal
+    - சோலர் மானியம எவ்வளவு
+    - solar maaniyam evvalavu
+    - விவசாயி சோலர் பம்பு திட்டம்
+    - vivasayi solar pambu thittam
+    - சோலர் திட்ட செயல்முறை
+    - solar thitta seyal murai
+
+- intent: ask_solar_pumps_eligibility
+  examples: |
+    - Who is eligible for solar pump subsidy?
+    - Eligibility criteria for solar pump scheme
+    - Can [small farmers](farmer_type) get solar pumps?
+    - Who can apply for solar powered pumpsets?
+    - Solar pump scheme requirements
+    - Who is eligible for solar pump subsidy in Tamil Nadu
+    - Can small farmers get solar pump subsidy
+    - Who qualifies for solar pump subsidy
+    - Requirements for solar pump scheme in Tamil Nadu
+    - Is SC/ST eligible for solar pump subsidy
+    - Farmer eligibility for solar pump grant
+    - How to qualify for solar pump scheme
+    - Who can apply for solar pump subsidy
+    - Eligibility for free solar pump scheme
+    - Govt scheme eligibility for solar pumps
+    - Can I get solar pump subsidy as a small farmer
+    - Solar pump subsidy for marginal farmers
+    - Who gets priority in solar pump scheme
+    - Eligibility for solar pump under PM-KUSUM
+    - Solar pump scheme eligibility for women farmers
+    - Land requirements for solar pump subsidy
+    - Solar pump subsidy rules for farmers
+    - Eligibility details for solar pump support
+    - Solar pum subsidy who qualify
+    - Soler pump subsedy eligiblity
+    - Subsity for solar pum who can get
+    - Solar pomp scheme who eligible
+    - Solar pump eligibilty rules
+    - Goverment solar pum scheme who apply
+    - Farmar solar pump eligibilty
+    - Who can get solar pump subsidy in Tamil Nadu
+    - Eligibility for solar pump subsidy
+    - Solar pomp scheme eligiblity
+    - சூரிய பம்பு மானியத்திற்கு யார் தகுதியானவர்?
+    - சூரிய பம்பு திட்டத்திற்கு தகுதி அளவுகோல்கள்
+    - [சிறு விவசாயிகள்](farmer_type) சூரிய பம்புகள் பெற முடியுமா?
+    - சூரிய சக்தி பம்புசெட்டுகளுக்கு யார் விண்ணப்பிக்கலாம்?
+    - சூரிய பம்பு திட்டத்திற்கு தேவைகள்
+    - சோலார் பம்ப் மானியத்திற்கு யார் தகுதியானவர்
+    - சோலார் பம்ப் திட்டத்திற்கு தகுதி விதிகள்
+    - சிறு விவசாயிகள் சோலார் பம்ப் மானியம் பெறலாமா
+    - சோலார் பம்ப் மானியத்திற்கு யார் தகுதி
+    - தமிழ்நாட்டில் சோலார் பம்ப் திட்ட தேவைகள்
+    - SC/ST விவசாயிகள் சோலார் பம்ப் மானியம் பெறலாமா
+    - சோலார் பம்ப் மானியத்திற்கு விவசாயி தகுதி
+    - சோலார் பம்ப் திட்டத்திற்கு எப்படி தகுதி பெறுவது
+    - சோலார் பம்ப் மானியத்திற்கு யார் விண்ணப்பிக்கலாம்
+    - இலவச சோலார் பம்ப் திட்டத்திற்கு தகுதி
+    - சோலார் பம்புகளுக்கு அரசு திட்ட தகுதி
+    - சிறு விவசாயியாக சோலார் பம்ப் மானியம் பெற முடியுமா
+    - குறு விவசாயிகளுக்கு சோலார் பம்ப் மானியம்
+    - சோலார் பம்ப் திட்டத்தில் முன்னுரிமை யாருக்கு
+    - PM-KUSUM இல் சோலார் பம்ப் தகுதி
+    - பெண் விவசாயிகளுக்கு சோலார் பம்ப் திட்ட தகுதி
+    - சோலார் பம்ப் மானியத்திற்கு நில தேவைகள்
+    - விவசாயிகளுக்கு சோலார் பம்ப் மானிய விதிகள்
+    - சோலர் பம்பு தகுதி
+    - solar pambu thaguthi
+    - சோலர் பம்ப மானியம தகுதி
+    - solar pamb maaniyam thaguthi
+    - சோலர் பம்பு திட்டம யார் தகுதி
+    - solar pambu thittam yaar thaguthi
+    - சோலர் மானியம யாருக்கு
+    - solar maaniyam yaarukku
+    - விவசாயி சோலர் பம்ப தகுதி
+    - vivasayi solar pamb thaguthi
+    - சூரிய பம்பு திட்டத்திற்கு தகுதி
+    - தமிழ்நாட்டில் சோலார் பம்ப் மானியம் யாருக்கு கிடைக்கும்
+
+- intent: ask_solar_pumps_application
+  examples: |
+    - How to apply for solar pump scheme
+    - Documents needed for solar pump subsidy
+    - Where to apply for solar pump subsidy
+    - Solar pump subsidy application process
+    - How to register for solar pump scheme online
+    - Steps to get solar pump subsidy
+    - Where to submit solar pump application
+    - Solar pump subsidy priority criteria
+    - How to get solar pump under PM-KUSUM
+    - Cheap solar pump scheme for farmers
+    - Solar pum subsidy apply easy way
+    - Apply soler pum scheme
+    - Solar pump documnts needed
+    - How to apply for solar pumps?
+    - Solar pump subsidy apply online
+    - How to submit solar pump application
+    - Solar pump scheme registration process
+    - Documents for solar pump scheme
+    - Online application for solar pump subsidy
+    - How to apply for solar pump subsidy in Tamil Nadu
+    - Application process for PM-KUSUM solar pumps
+    - Where to get solar pump application form
+    - Solar pump scheme apply steps
+    - Solar pomp scheme apply process
+    - Farmar solar pump apply
+    - Solar pump subsidy application rules
+    - சூரிய பம்புகளுக்கு எப்படி விண்ணப்பிப்பது?
+    - சோலார் பம்ப் திட்டத்திற்கு எப்படி விண்ணப்பிக்க வேண்டும்
+    - சோலார் பம்ப் மானியத்திற்கு தேவையான ஆவணங்கள்
+    - சோலார் பம்ப் மானியத்திற்கு எங்கு விண்ணப்பிக்க வேண்டும்
+    - சோலார் பம்ப் மானிய விண்ணப்ப செயல்முறை
+    - சோலார் பம்ப் திட்டத்தில் ஆன்லைனில் பதிவு செய்வது எப்படி
+    - சோலார் பம்ப் மானியம் பெறுவதற்கு படிகள்
+    - சோலார் பம்ப் விண்ணப்பம் எங்கு சமர்ப்பிக்க வேண்டும்
+    - சோலார் பம்ப் மானிய முன்னுரிமை விதிகள்
+    - PM-KUSUM இல் சோலார் பம்ப் எப்படி பெறுவது
+    - மானியம் எப்படி விண்ணப்பிக்க
+    - maaniyam eppadi vinnappikka
+    - சோலர் பம்ப ஆவணங்கள்
+    - solar pamb aavanangal
+    - விவசாயி சோலர் பம்பு விண்ணப்பம்
+    - vivasayi solar pambu vinnappam
+    - சோலர் பம்பு விண்ணப்ப செயல்முறை
+    - solar pambu vinnappa seyal murai
+
+- intent: ask_solar_pumps_documents
+  examples: |
+    - What documents are needed for solar pump subsidy?
+    - Documents required for solar pump scheme
+    - Paperwork for solar powered pumpsets
+    - List documents for solar pump application
+    - What do I need to submit for solar pumps?
+    - What documents are needed for solar pump subsidy in Tamil Nadu
+    - Documents required for solar pump scheme
+    - Papers for applying solar pump subsidy
+    - What to submit for solar pump subsidy
+    - List of documents for solar pump scheme
+    - Solar pump scheme application documents
+    - Docs needed for solar pump subsidy
+    - Documents for solar pump grant
+    - What papers for solar pump subsidy scheme
+    - Required documents for solar pump subsidy
+    - Free solar pump scheme document list
+    - Govt scheme documents for solar pumps
+    - Papers needed to get solar pump subsidy
+    - Documents for small farmer solar subsidy
+    - Solar pump scheme document requirements
+    - Solar pump subsidy application papers
+    - Solar pump subsidy documents for marginal farmers
+    - What to submit for solar pump scheme
+    - Documents for solar pump under PM-KUSUM
+    - Papers for women farmers solar subsidy
+    - Solar pum subsidy docs needed
+    - Soler pump subsedy documents
+    - Subsity for solar pum papers
+    - Solar pomp scheme documnts
+    - Solar pump sheme papers
+    - Solar pump documnts need
+    - Goverment solar pum scheme papers
+    - Solar subsidy docs required
+    - Farmar solar pump documents
+    - Solar pum scheme papers
+    - சோலார் பம்ப் மானியத்திற்கு தேவையான ஆவணங்கள்
+    - சோலார் பம்ப் திட்டத்திற்கு ஆவணங்கள்
+    - சோலார் பம்ப் மானியம் விண்ணப்பிக்க தேவையான பேப்பர்கள்
+    - சோலார் பம்ப் மானியத்திற்கு என்ன சமர்ப்பிக்க வேண்டும்
+    - சோலார் பம்ப் திட்டத்திற்கு ஆவண பட்டியல்
+    - சோலார் பம்ப் திட்ட விண்ணப்ப ஆவணங்கள்
+    - சோலார் பம்ப் மானியத்திற்கு தேவையான ஆவணங்கள்
+    - சோலார் பம்ப் மானியத்திற்கு ஆவணங்கள்
+    - சோலார் பம்ப் மானிய திட்டத்திற்கு என்ன பேப்பர்கள்
+    - சோலார் பம்ப் மானியத்திற்கு தேவையான ஆவணங்கள்
+    - இலவச சோலார் பம்ப் திட்ட ஆவண பட்டியல்
+    - சோலார் பம்புகளுக்கு அரசு திட்ட ஆவணங்கள்
+    - சோலார் பம்ப் மானியம் பெற தேவையான பேப்பர்கள்
+    - சிறு விவசாயி சோலார் மானிய ஆவணங்கள்
+    - சோலார் பம்ப் திட்ட ஆவணத் தேவைகள்
+    - சோலார் பம்ப் மானிய விண்ணப்ப பேப்பர்கள்
+    - குறு விவசாயிகளுக்கு சோலார் பம்ப் மானிய ஆவணங்கள்
+    - சோலார் பம்ப் திட்டத்திற்கு என்ன சமர்ப்பிக்க வேண்டும்
+    - PM-KUSUM இல் சோலார் பம்ப் ஆவணங்கள்
+    - பெண் விவசாயிகளுக்கு சோலார் மானிய ஆவணங்கள்
+    - சோலர் பம்பு ஆவணங்கள்
+    - solar pambu aavanangal
+    - சோலர் பம்ப மானியம ஆவணங்கள்
+    - solar pamb maaniyam aavanangal
+    - சோலர் பம்பு திட்டம ஆவணங்கள்
+    - solar pambu thittam aavanangal
+    - சோலர் மானியம ஆவணங்கள்
+    - solar maaniyam aavanangal
+    - விவசாயி சோலர் பம்ப ஆவணங்கள்
+    - vivasayi solar pamb aavanangal
+    - சோலர் ஆவணங்கள் எப்டி
+    - solar aavanangal eppadi
+    - சூரிய பம்பு மானியத்திற்கு என்ன ஆவணங்கள் தேவை?
+    - சூரிய பம்பு திட்டத்திற்கு தேவையான ஆவணங்கள்
+    - சூரிய சக்தி பம்புசெட்டுகளுக்கு ஆவணங்கள்
+    - சூரிய பம்பு விண்ணப்பத்திற்கு ஆவணங்கள் பட்டியல்
+    - சூரிய பம்புகளுக்கு நான் என்ன சமர்ப்பிக்க வேண்டும்?
+
+- intent: ask_solar_pumps_apply
+  examples: |
+    - How to apply for solar pump subsidy in Tamil Nadu
+    - Process to apply for solar pump scheme
+    - How do I apply for solar pump subsidy
+    - Steps to get solar pump subsidy
+    - Where to apply for solar pump scheme
+    - Apply for solar pump scheme online
+    - How to submit application for solar pump subsidy
+    - Application process for solar pump grant
+    - How to register for solar pump scheme
+    - Where to submit papers for solar pump subsidy
+    - How to get free solar pump scheme application
+    - Govt scheme application process for solar pumps
+    - How to apply for solar pump subsidy online
+    - Steps for small farmer solar subsidy application
+    - Solar pump scheme application procedure
+    - How to apply for solar pump subsidy for marginal farmers
+    - Where to apply for PM-KUSUM solar pump
+    - How to apply for solar pump rental scheme
+    - Application process for women farmers solar subsidy
+    - How to enroll in solar pump scheme
+    - Solar pum subsidy apply easy way
+    - Soler pump subsedy how apply
+    - Subsity for solar pum apply
+    - Solar pomp scheme apply process
+    - Solar pump sheme aplication
+    - Apply soler pum scheme
+    - Goverment solar pum scheme apply
+    - Solar subsidy apply steps
+    - Farmar solar pump apply
+    - Solar pum scheme how to apply
+    - How to apply for solar pump subsidy?
+    - Where can I apply for solar pumps?
+    - Application process for solar pump scheme
+    - Website for solar pump application
+    - How to get solar pumps in [Thanjavur](district)?
+    - How to get solar pumps in [Tiruchirappalli](district)?
+    - How to get solar pumps in [Pudukkottai](district)?
+    - How to get solar pumps in [Karur](district)?
+    - சோலார் பம்ப் மானியத்திற்கு எப்படி விண்ணப்பிக்க வேண்டும்
+    - சோலார் பம்ப் திட்ட விண்ணப்ப செயல்முறை
+    - சோலார் பம்ப் மானியத்திற்கு எப்படி விண்ணப்பிப்பது
+    - சோலார் பம்ப் மானியம் பெறுவதற்கு படிகள்
+    - சோலார் பம்ப் திட்டத்திற்கு எங்கு விண்ணப்பிக்க வேண்டும்
+    - சோலார் பம்ப் திட்டத்திற்கு ஆன்லைனில் விண்ணப்பிக்க
+    - சோலார் பம்ப் மானிய விண்ணப்பம் எப்படி சமர்ப்பிப்பது
+    - சோலார் பம்ப் மானியத்திற்கு விண்ணப்ப செயல்முறை
+    - சோலார் பம்ப் திட்டத்தில் பதிவு செய்வது எப்படி
+    - சோலார் பம்ப் மானியத்திற்கு ஆவணங்கள் எங்கு சமர்ப்பிக்க
+    - இலவச சோலார் பம்ப் திட்ட விண்ணப்பம் எப்படி
+    - சோலார் பம்புகளுக்கு அரசு திட்ட விண்ணப்ப முறை
+    - சோலார் பம்ப் மானியத்திற்கு ஆன்லைனில் எப்படி விண்ணப்பிப்பது
+    - சிறு விவசாயி சோலார் மானிய விண்ணப்ப படிகள்
+    - சோலார் பம்ப் திட்ட விண்ணப்ப செயல்முறை
+    - குறு விவசாயிகளுக்கு சோலார் பம்ப் மானிய விண்ணப்பம்
+    - PM-KUSUM சோலார் பம்ப் திட்டத்திற்கு எங்கு விண்ணப்பிக்க
+    - சோலார் பம்ப் வாடகை திட்ட விண்ணப்ப முறை
+    - பெண் விவசாயிகளுக்கு சோலார் மானிய விண்ணப்ப செயல்முறை
+    - சோலார் பம்ப் திட்டத்தில் சேருவது எப்படி
+    - சோலர் பம்பு விண்ணப்பம்
+    - solar pambu vinnappam
+    - சோலர் பம்ப மானியம விண்ணப்பம்
+    - solar pamb maaniyam vinnappam
+    - சோலர் பம்பு திட்டம விண்ணப்பம்
+    - solar pambu thittam vinnappam
+    - சோலர் மானியம எப்படி விண்ணப்பிக்க
+    - solar maaniyam eppadi vinnappikka
+    - விவசாயி சோலர் பம்ப விண்ணப்பம்
+    - vivasayi solar pamb vinnappam
+    - சோலர் விண்ணப்பம் எப்டி
+    - solar vinnappam eppadi
+    - சோலர் பம்பு வ
+    - solar pambu v
+    - சோலர் பம்பு ம
+    - solar pambu ma
+    - சோலர் பம்பு த
+    - solar pambu th
+    - சூரிய பம்பு மானியத்திற்கு எப்படி விண்ணப்பிப்பது?
+    - சூரிய பம்புகளுக்கு எங்கு விண்ணப்பிக்கலாம்?
+    - சூரிய பம்பு திட்டத்திற்கு விண்ணப்ப செயல்முறை
+    - சூரிய பம்பு விண்ணப்பத்திற்கு இணையதளம்
+    - [தஞ்சாவூரில்](district) சூரிய பம்புகள் எப்படி பெறுவது?
+
+# Value Addition
+- intent: ask_value_addition
+  examples: |
+    - Value addition machinery subsidy
+    - Tell me about post-harvest schemes
+    - How to get storage equipment?
+    - Subsidy for value addition
+    - Value addition in [Madurai](district)
+    - மதிப்பு கூட்டும் இயந்திர மானியம்
+    - அறுவடைக்கு பின் திட்டங்கள் பற்றி சொல்லுங்கள்
+    - சேமிப்பு உபகரணங்களை எப்படி பெறுவது?
+    - மதிப்பு கூட்டுதலுக்கான மானியம்
+    - [மதுரையில்](district) மதிப்பு கூட்டுதல்
+
+- intent: ask_value_addition_details
+  examples: |
+    - What is the value addition machinery scheme?
+    - Details of post-harvest value addition
+    - Tell me about value addition subsidies
+    - Explain the value addition program
+    - Benefits of value addition for farmers
+    - மதிப்பு கூட்டும் இயந்திர திட்டம் என்றால் என்ன?
+    - அறுவடைக்கு பின் மதிப்பு கூட்டுதல் விவரங்கள்
+    - மதிப்பு கூட்டல் மானியங்கள் பற்றி சொல்லுங்கள்
+    - மதிப்பு கூட்டல் திட்டத்தை விளக்குங்கள்
+    - விவசாயிகளுக்கு மதிப்பு கூட்டுதலின் பயன்கள்
+
+- intent: ask_value_addition_eligibility
+  examples: |
+    - Who is eligible for value addition subsidy?
+    - Eligibility for value addition scheme
+    - Can [FPOs](farmer_type) get value addition subsidy?
+    - Who can apply for post-harvest equipment?
+    - Criteria for value addition scheme
+    - மதிப்பு கூட்டல் மானியத்திற்கு யார் தகுதியானவர்?
+    - மதிப்பு கூட்டல் திட்டத்திற்கு தகுதி
+    - [FPOக்கள்](farmer_type) மதிப்பு கூட்டல் மானியம் பெற முடியுமா?
+    - அறுவடைக்கு பின் உபகரணங்களுக்கு யார் விண்ணப்பிக்கலாம்?
+    - மதிப்பு கூட்டல் திட்டத்திற்கு அளவுகோல்கள்
+
+- intent: ask_value_addition_documents
+  examples: |
+    - What documents are needed for value addition subsidy?
+    - Documents required for value addition scheme
+    - Paperwork for post-harvest equipment
+    - List documents for value addition application
+    - What do I need to submit for storage equipment?
+    - மதிப்பு கூட்டல் மானியத்திற்கு என்ன ஆவணங்கள் தேவை?
+    - மதிப்பு கூட்டல் திட்டத்திற்கு தேவையான ஆவணங்கள்
+    - அறுவடைக்கு பின் உபகரணங்களுக்கு ஆவணங்கள்
+    - மதிப்பு கூட்டல் விண்ணப்பத்திற்கு ஆவணங்கள் பட்டியல்
+    - சேமிப்பு உபகரணங்களுக்கு நான் என்ன சமர்ப்பிக்க வேண்டும்?
+
+- intent: ask_value_addition_apply
+  examples: |
+    - How to apply for value addition subsidy?
+    - Where can I apply for post-harvest equipment?
+    - Application process for value addition scheme
+    - Website for value addition application
+    - How to get value addition in [Madurai](district)?
+    - மதிப்பு கூட்டல் மானியத்திற்கு எப்படி விண்ணப்பிப்பது?
+    - அறுவடைக்கு பின் உபகரணங்களுக்கு எங்கு விண்ணப்பிக்கலாம்?
+    - மதிப்பு கூட்டல் திட்டத்திற்கு விண்ணப்ப செயல்முறை
+    - மதிப்பு கூட்டல் விண்ணப்பத்திற்கு இணையதளம்
+    - [மதுரையில்](district) மதிப்பு கூட்டல் எப்படி பெறுவது?
+
+# Integrated Development
+- intent: ask_integrated_development
+  examples: |
+    - Kalaignar village development scheme
+    - Tell me about integrated farming
+    - Subsidy for water resources
+    - Integrated development in [Cauvery Delta](district)
+    - Village farming schemes
+    - கலைஞர் கிராம வளர்ச்சி திட்டம்
+    - ஒருங்கிணைந்த விவசாயம் பற்றி சொல்லுங்கள்
+    - நீர் ஆதாரங்களுக்கான மானியம்
+    - [காவிரி டெல்டாவில்](district) ஒருங்கிணைந்த வளர்ச்சி
+    - கிராம விவசாய திட்டங்கள்
+
+- intent: ask_integrated_development_details
+  examples: |
+    - What is Kalaignar’s village development scheme?
+    - Details of integrated farming program
+    - Tell me about integrated development subsidies
+    - Explain the integrated development scheme
+    - Benefits of integrated farming for villages
+    - கலைஞர் கிராம வளர்ச்சி திட்டம் என்றால் என்ன?
+    - ஒருங்கிணைந்த விவசாய திட்ட விவரங்கள்
+    - ஒருங்கிணைந்த வளர்ச்சி மானியங்கள் பற்றி சொல்லுங்கள்
+    - ஒருங்கிணைந்த வளர்ச்சி திட்டத்தை விளக்குங்கள்
+    - கிராமங்களுக்கு ஒருங்கிணைந்த விவசாயத்தின் பயன்கள்
+
+- intent: ask_integrated_development_eligibility
+  examples: |
+    - Who is eligible for integrated development scheme?
+    - Eligibility for Kalaignar village scheme
+    - Can [small farmers](farmer_type) join integrated development?
+    - Who can apply for village farming subsidies?
+    - Criteria for integrated development scheme
+    - ஒருங்கிணைந்த வளர்ச்சி திட்டத்திற்கு யார் தகுதியானவர்?
+    - கலைஞர் கிராம திட்டத்திற்கு தகுதி
+    - [சிறு விவசாயிகள்](farmer_type) ஒருங்கிணைந்த வளர்ச்சியில் சேர முடியுமா?
+    - கிராம விவசாய மானியங்களுக்கு யார் விண்ணப்பிக்கலாம்?
+    - ஒருங்கிணைந்த வளர்ச்சி திட்டத்திற்கு அளவுகோல்கள்
+
+- intent: ask_integrated_development_documents
+  examples: |
+    - What documents are needed for integrated development subsidy?
+    - Documents required for Kalaignar village scheme
+    - Paperwork for integrated farming subsidies
+    - List documents for integrated development application
+    - What do I need to submit for village development?
+    - ஒருங்கிணைந்த வளர்ச்சி மானியத்திற்கு என்ன ஆவணங்கள் தேவை?
+    - கலைஞர் கிராம திட்டத்திற்கு தேவையான ஆவணங்கள்
+    - ஒருங்கிணைந்த விவசாய மானியங்களுக்கு ஆவணங்கள்
+    - ஒருங்கிணைந்த வளர்ச்சி விண்ணப்பத்திற்கு ஆவணங்கள் பட்டியல்
+    - கிராம வளர்ச்சிக்கு நான் என்ன சமர்ப்பிக்க வேண்டும்?
+
+- intent: ask_integrated_development_apply
+  examples: |
+    - How to apply for integrated development subsidy?
+    - Where can I apply for Kalaignar village scheme?
+    - Application process for integrated farming
+    - Website for integrated development application
+    - How to join integrated development in [Cauvery Delta](district)?
+    - ஒருங்கிணைந்த வளர்ச்சி மானியத்திற்கு எப்படி விண்ணப்பிப்பது?
+    - கலைஞர் கிராம திட்டத்திற்கு எங்கு விண்ணப்பிக்கலாம்?
+    - ஒருங்கிணைந்த விவசாயத்திற்கு விண்ணப்ப செயல்முறை
+    - ஒருங்கிணைந்த வளர்ச்சி விண்ணப்பத்திற்கு இணையதளம்
+    - [காவிரி டெல்டாவில்](district) ஒருங்கிணைந்த வளர்ச்சியில் எப்படி சேர்வது?
+
+# Solar Dryers
+- intent: ask_solar_dryers
+  examples: |
+    - Solar dryer subsidy
+    - How to get solar tunnel dryers?
+    - Tell me about drying schemes
+    - Solar dryers for farmers
+    - Solar dryer in [Salem](district)
+    - சூரிய உலர்த்தி மானியம்
+    - சூரிய கூடார உலர்த்திகளை எப்படி பெறுவது?
+    - உலர்த்தும் திட்டங்கள் பற்றி சொல்லுங்கள்
+    - விவசாயிகளுக்கான சூரிய உலர்த்திகள்
+    - [சேலத்தில்](district) சூரிய உலர்த்தி
+
+- intent: ask_solar_dryers_details
+  examples: |
+    - What is the solar dryer scheme?
+    - Details of solar tunnel dryers
+    - Tell me about solar dryer subsidies
+    - Explain the solar dryer program
+    - Benefits of solar dryers for farmers
+    - சூரிய உலர்த்தி திட்டம் என்றால் என்ன?
+    - சூரிய கூடார உலர்த்திகள் விவரங்கள்
+    - சூரிய உலர்த்தி மானியங்கள் பற்றி சொல்லுங்கள்
+    - சூரிய உலர்த்தி திட்டத்தை விளக்குங்கள்
+    - விவசாயிகளுக்கு சூரிய உலர்த்திகளின் பயன்கள்
+
+- intent: ask_solar_dryers_eligibility
+  examples: |
+    - Who is eligible for solar dryer subsidy?
+    - Eligibility for solar dryer scheme
+    - Can [small farmers](farmer_type) get solar dryers?
+    - Who can apply for solar tunnel dryers?
+    - Criteria for solar dryer scheme
+    - சூரிய உலர்த்தி மானியத்திற்கு யார் தகுதியானவர்?
+    - சூரிய உலர்த்தி திட்டத்திற்கு தகுதி
+    - [சிறு விவசாயிகள்](farmer_type) சூரிய உலர்த்திகள் பெற முடியுமா?
+    - சூரிய கூடார உலர்த்திகளுக்கு யார் விண்ணப்பிக்கலாம்?
+    - சூரிய உலர்த்தி திட்டத்திற்கு அளவுகோல்கள்
+
+- intent: ask_solar_dryers_documents
+  examples: |
+    - What documents are needed for solar dryer subsidy?
+    - Documents required for solar dryer scheme
+    - Paperwork for solar tunnel dryers
+    - List documents for solar dryer application
+    - What do I need to submit for solar dryers?
+    - சூரிய உலர்த்தி மானியத்திற்கு என்ன ஆவணங்கள் தேவை?
+    - சூரிய உலர்த்தி திட்டத்திற்கு தேவையான ஆவணங்கள்
+    - சூரிய கூடார உலர்த்திகளுக்கு ஆவணங்கள்
+    - சூரிய உலர்த்தி விண்ணப்பத்திற்கு ஆவணங்கள் பட்டியல்
+    - சூரிய உலர்த்திகளுக்கு நான் என்ன சமர்ப்பிக்க வேண்டும்?
+
+- intent: ask_solar_dryers_apply
+  examples: |
+    - How to apply for solar dryer subsidy?
+    - Where can I apply for solar tunnel dryers?
+    - Application process for solar dryer scheme
+    - Website for solar dryer application
+    - How to get solar dryers in [Salem](district)?
+    - சூரிய உலர்த்தி மானியத்திற்கு எப்படி விண்ணப்பிப்பது?
+    - சூரிய கூடார உலர்த்திகளுக்கு எங்கு விண்ணப்பிக்கலாம்?
+    - சூரிய உலர்த்தி திட்டத்திற்கு விண்ணப்ப செயல்முறை
+    - சூரிய உலர்த்தி விண்ணப்பத்திற்கு இணையதளம்
+    - [சேலத்தில்](district) சூரிய உலர்த்திகள் எப்படி பெறுவது?
+
+# Electric Pumps
+- intent: ask_electric_pumps
+  examples: |
+    - Electric pump subsidy
+    - How to apply for electric motor pumps?
+    - Tell me about subsidized pumps
+    - Electric pumps for [small farmers](farmer_type)
+    - Electric pumps in [Erode](district)
+    - மின்மோட்டார் பம்பு மானியம்
+    - மின்மோட்டார் பம்புகளுக்கு எப்படி விண்ணப்பிப்பது?
+    - மானியத்தில் பம்புகள் பற்றி சொல்லுங்கள்
+    - [சிறு விவசாயிகளுக்கு](farmer_type) மின்மோட்டார் பம்புகள்
+    - [ஈரோட்டில்](district) மின்மோட்டார் பம்புகள்
+
+- intent: ask_electric_pumps_details
+  examples: |
+    - What is the electric pump scheme?
+    - Details of subsidized electric pumps
+    - Tell me about electric pump subsidies
+    - Explain the electric pump program
+    - Benefits of electric pumps for farmers
+    - மின்மோட்டார் பம்பு திட்டம் என்றால் என்ன?
+    - மானியத்தில் மின்மோட்டார் பம்புகள் விவரங்கள்
+    - மின்மோட்டார் பம்பு மானியங்கள் பற்றி சொல்லுங்கள்
+    - மின்மோட்டார் பம்பு திட்டத்தை விளக்குங்கள்
+    - விவசாயிகளுக்கு மின்மோட்டார் பம்புகளின் பயன்கள்
+
+- intent: ask_electric_pumps_eligibility
+  examples: |
+    - Who is eligible for electric pump subsidy?
+    - Eligibility for electric pump scheme
+    - Can [small farmers](farmer_type) get electric pumps?
+    - Who can apply for subsidized electric pumps?
+    - Criteria for electric pump scheme
+    - மின்மோட்டார் பம்பு மானியத்திற்கு யார் தகுதியானவர்?
+    - மின்மோட்டார் பம்பு திட்டத்திற்கு தகுதி
+    - [சிறு விவசாயிகள்](farmer_type) மின்மோட்டார் பம்புகள் பெற முடியுமா?
+    - மானியத்தில் மின்மோட்டார் பம்புகளுக்கு யார் விண்ணப்பிக்கலாம்?
+    - மின்மோட்டார் பம்பு திட்டத்திற்கு அளவுகோல்கள்
+
+- intent: ask_electric_pumps_documents
+  examples: |
+    - What documents are needed for electric pump subsidy?
+    - Documents required for electric pump scheme
+    - Paperwork for subsidized electric pumps
+    - List documents for electric pump application
+    - What do I need to submit for electric pumps?
+    - மின்மோட்டார் பம்பு மானியத்திற்கு என்ன ஆவணங்கள் தேவை?
+    - மின்மோட்டார் பம்பு திட்டத்திற்கு தேவையான ஆவணங்கள்
+    - மானியத்தில் மின்மோட்டார் பம்புகளுக்கு ஆவணங்கள்
+    - மின்மோட்டார் பம்பு விண்ணப்பத்திற்கு ஆவணங்கள் பட்டியல்
+    - மின்மோட்டார் பம்புகளுக்கு நான் என்ன சமர்ப்பிக்க வேண்டும்?
+
+- intent: ask_electric_pumps_apply
+  examples: |
+    - How to apply for electric pump subsidy?
+    - Where can I apply for electric motor pumps?
+    - Application process for electric pump scheme
+    - Website for electric pump application
+    - How to get electric pumps in [Erode](district)?
+    - மின்மோட்டார் பம்பு மானியத்திற்கு எப்படி விண்ணப்பிப்பது?
+    - மின்மோட்டார் பம்புகளுக்கு எங்கு விண்ணப்பிக்கலாம்?
+    - மின்மோட்டார் பம்பு திட்டத்திற்கு விண்ணப்ப செயல்முறை
+    - மின்மோட்டார் பம்பு விண்ணப்பத்திற்கு இணையதளம்
+    - [ஈரோட்டில்](district) மின்மோட்டார் பம்புகள் எப்படி பெறுவது?
+
+# Micro Irrigation
+- intent: ask_micro_irrigation
+  examples: |
+    - Micro irrigation subsidy
+    - Tell me about drip irrigation
+    - How to get water efficiency schemes?
+    - Micro irrigation in [Coimbatore](district)
+    - Subsidy for [small farmers](farmer_type)
+    - நுண்ணீர் பாசன மானியம்
+    - நீர்த்துளி பாசனம் பற்றி சொல்லுங்கள்
+    - நீர் திறன் திட்டங்களை எப்படி பெறுவது?
+    - [கோயம்புத்தூரில்](district) நுண்ணீர் பாசனம்
+    - [சிறு விவசாயிகளுக்கு](farmer_type) மானியம்
+
+- intent: ask_micro_irrigation_details
+  examples: |
+    - What is the micro irrigation scheme?
+    - Details of drip irrigation program
+    - Tell me about micro irrigation subsidies
+    - Explain the micro irrigation scheme
+    - Benefits of micro irrigation for farmers
+    - நுண்ணீர் பாசன திட்டம் என்றால் என்ன?
+    - நீர்த்துளி பாசன திட்ட விவரங்கள்
+    - நுண்ணீர் பாசன மானியங்கள் பற்றி சொல்லுங்கள்
+    - நுண்ணீர் பாசன திட்டத்தை விளக்குங்கள்
+    - விவசாயிகளுக்கு நுண்ணீர் பாசனத்தின் பயன்கள்
+
+- intent: ask_micro_irrigation_eligibility
+  examples: |
+    - Who is eligible for micro irrigation subsidy?
+    - Eligibility for micro irrigation scheme
+    - Can [small farmers](farmer_type) get micro irrigation?
+    - Who can apply for drip irrigation subsidies?
+    - Criteria for micro irrigation scheme
+    - நுண்ணீர் பாசன மானியத்திற்கு யார் தகுதியானவர்?
+    - நுண்ணீர் பாசன திட்டத்திற்கு தகுதி
+    - [சிறு விவசாயிகள்](farmer_type) நுண்ணீர் பாசனம் பெற முடியுமா?
+    - நீர்த்துளி பாசன மானியங்களுக்கு யார் விண்ணப்பிக்கலாம்?
+    - நுண்ணீர் பாசன திட்டத்திற்கு அளவுகோல்கள்
+
+- intent: ask_micro_irrigation_documents
+  examples: |
+    - What documents are needed for micro irrigation subsidy?
+    - Documents required for micro irrigation scheme
+    - Paperwork for drip irrigation subsidies
+    - List documents for micro irrigation application
+    - What do I need to submit for micro irrigation?
+    - நுண்ணீர் பாசன மானியத்திற்கு என்ன ஆவணங்கள் தேவை?
+    - நுண்ணீர் பாசன திட்டத்திற்கு தேவையான ஆவணங்கள்
+    - நீர்த்துளி பாசன மானியங்களுக்கு ஆவணங்கள்
+    - நுண்ணீர் பாசன விண்ணப்பத்திற்கு ஆவணங்கள் பட்டியல்
+    - நுண்ணீர் பாசனத்திற்கு நான் என்ன சமர்ப்பிக்க வேண்டும்?
+
+- intent: ask_micro_irrigation_apply
+  examples: |
+    - How to apply for micro irrigation subsidy?
+    - Where can I apply for drip irrigation?
+    - Application process for micro irrigation scheme
+    - Website for micro irrigation application
+    - How to get micro irrigation in [Coimbatore](district)?
+    - நுண்ணீர் பாசன மானியத்திற்கு எப்படி விண்ணப்பிப்பது?
+    - நீர்த்துளி பாசனத்திற்கு எங்கு விண்ணப்பிக்கலாம்?
+    - நுண்ணீர் பாசன திட்டத்திற்கு விண்ணப்ப செயல்முறை
+    - நுண்ணீர் பாசன விண்ணப்பத்திற்கு இணையதளம்
+    - [கோயம்புத்தூரில்](district) நுண்ணீர் பாசனம் எப்படி பெறுவது?
+
+# Auto Pump Control
+- intent: ask_auto_pump_control
+  examples: |
+    - Automatic pump control subsidy
+    - Tell me about mobile-operated pumps
+    - How to get pump control systems?
+    - Auto pump in [Tiruppur](district)
+    - Subsidy for pump automation
+    - தானியங்கி பம்பு கட்டுப்பாடு மானியம்
+    - கைபேசி இயக்க பம்புகள் பற்றி சொல்லுங்கள்
+    - பம்பு கட்டுப்பாடு அமைப்புகளை எப்படி பெறுவது?
+    - [திருப்பூரில்](district) தானியங்கி பம்பு
+    - பம்பு தானியங்குதலுக்கான மானியம்
+
+- intent: ask_auto_pump_control_details
+  examples: |
+    - What is the auto pump control scheme?
+    - Details of mobile-operated pump systems
+    - Tell me about auto pump control subsidies
+    - Explain the auto pump control program
+    - Benefits of automatic pump control for farmers
+    - தானியங்கி பம்பு கட்டுப்பாடு திட்டம் என்றால் என்ன?
+    - கைபேசி இயக்க பம்பு அமைப்புகள் விவரங்கள்
+    - தானியங்கி பம்பு கட்டுப்பாடு மானியங்கள் பற்றி சொல்லுங்கள்
+    - தானியங்கி பம்பு கட்டுப்பாடு திட்டத்தை விளக்குங்கள்
+    - விவசாயிகளுக்கு தானியங்கி பம்பு கட்டுப்பாட்டின் பயன்கள்
+
+- intent: ask_auto_pump_control_eligibility
+  examples: |
+    - Who is eligible for auto pump control subsidy?
+    - Eligibility for auto pump control scheme
+    - Can [small farmers](farmer_type) get auto pump systems?
+    - Who can apply for mobile-operated pumps?
+    - Criteria for auto pump control scheme
+    - தானியங்கி பம்பு கட்டுப்பாடு மானியத்திற்கு யார் தகுதியானவர்?
+    - தானியங்கி பம்பு கட்டுப்பாடு திட்டத்திற்கு தகுதி
+    - [சிறு விவசாயிகள்](farmer_type) தானியங்கி பம்பு அமைப்புகள் பெற முடியுமா?
+    - கைபேசி இயக்க பம்புகளுக்கு யார் விண்ணப்பிக்கலாம்?
+    - தானியங்கி பம்பு கட்டுப்பாடு திட்டத்திற்கு அளவுகோல்கள்
+
+- intent: ask_auto_pump_control_documents
+  examples: |
+    - What documents are needed for auto pump control subsidy?
+    - Documents required for auto pump control scheme
+    - Paperwork for mobile-operated pumps
+    - List documents for auto pump control application
+    - What do I need to submit for pump automation?
+    - தானியங்கி பம்பு கட்டுப்பாடு மானியத்திற்கு என்ன ஆவணங்கள் தேவை?
+    - தானியங்கி பம்பு கட்டுப்பாடு திட்டத்திற்கு தேவையான ஆவணங்கள்
+    - கைபேசி இயக்க பம்புகளுக்கு ஆவணங்கள்
+    - தானியங்கி பம்பு கட்டுப்பாடு விண்ணப்பத்திற்கு ஆவணங்கள் பட்டியல்
+    - பம்பு தானியங்குதலுக்கு நான் என்ன சமர்ப்பிக்க வேண்டும்?
+
+- intent: ask_auto_pump_control_apply
+  examples: |
+    - How to apply for auto pump control subsidy?
+    - Where can I apply for mobile-operated pumps?
+    - Application process for auto pump control scheme
+    - Website for auto pump control application
+    - How to get auto pump control in [Tiruppur](district)?
+    - தானியங்கி பம்பு கட்டுப்பாடு மானியத்திற்கு எப்படி விண்ணப்பிப்பது?
+    - கைபேசி இயக்க பம்புகளுக்கு எங்கு விண்ணப்பிக்கலாம்?
+    - தானியங்கி பம்பு கட்டுப்பாடு திட்டத்திற்கு விண்ணப்ப செயல்முறை
+    - தானியங்கி பம்பு கட்டுப்பாடு விண்ணப்பத்திற்கு இணையதளம்
+    - [திருப்பூரில்](district) தானியங்கி பம்பு கட்டுப்பாடு எப்படி பெறுவது?
+
+# Sugarcane Machinery
+- intent: ask_sugarcane_machinery
+  examples: |
+    - Sugarcane machinery subsidy
+    - Tell me about sugarcane rental centers
+    - How to get sugarcane equipment?
+    - Sugarcane schemes in [Villupuram](district)
+    - Subsidy for sugarcane farmers
+    - கரும்பு இயந்திர மானியம்
+    - கரும்பு வாடகை மையங்கள் பற்றி சொல்லுங்கள்
+    - கரும்பு உபகரணங்களை எப்படி பெறுவது?
+    - [விழுப்புரத்தில்](district) கரும்பு திட்டங்கள்
+    - கரும்பு விவசாயிகளுக்கு மானியம்
+
+- intent: ask_sugarcane_machinery_details
+  examples: |
+    - What is the sugarcane machinery scheme?
+    - Details of sugarcane rental centers
+    - Tell me about sugarcane machinery subsidies
+    - Explain the sugarcane machinery program
+    - Benefits of sugarcane machinery for farmers
+    - கரும்பு இயந்திர திட்டம் என்றால் என்ன?
+    - கரும்பு வாடகை மையங்கள் விவரங்கள்
+    - கரும்பு இயந்திர மானியங்கள் பற்றி சொல்லுங்கள்
+    - கரும்பு இயந்திர திட்டத்தை விளக்குங்கள்
+    - விவசாயிகளுக்கு கரும்பு இயந்திரங்களின் பயன்கள்
+
+- intent: ask_sugarcane_machinery_eligibility
+  examples: |
+    - Who is eligible for sugarcane machinery subsidy?
+    - Eligibility for sugarcane rental centers
+    - Can entrepreneurs get sugarcane machinery subsidy?
+    - Who can apply for sugarcane equipment?
+    - Criteria for sugarcane machinery scheme
+    - கரும்பு இயந்திர மானியத்திற்கு யார் தகுதியானவர்?
+    - கரும்பு வாடகை மையங்களுக்கு தகுதி
+    - தொழில்முனைவோர் கரும்பு இயந்திர மானியம் பெற முடியுமா?
+    - கரும்பு உபகரணங்களுக்கு யார் விண்ணப்பிக்கலாம்?
+    - கரும்பு இயந்திர திட்டத்திற்கு அளவுகோல்கள்
+
+- intent: ask_sugarcane_machinery_documents
+  examples: |
+    - What documents are needed for sugarcane machinery subsidy?
+    - Documents required for sugarcane rental centers
+    - Paperwork for sugarcane equipment
+    - List documents for sugarcane machinery application
+    - What do I need to submit for sugarcane rental?
+    - கரும்பு இயந்திர மானியத்திற்கு என்ன ஆவணங்கள் தேவை?
+    - கரும்பு வாடகை மையங்களுக்கு தேவையான ஆவணங்கள்
+    - கரும்பு உபகரணங்களுக்கு ஆவணங்கள்
+    - கரும்பு இயந்திர விண்ணப்பத்திற்கு ஆவணங்கள் பட்டியல்
+    - கரும்பு வாடகைக்கு நான் என்ன சமர்ப்பிக்க வேண்டும்?
+
+- intent: ask_sugarcane_machinery_apply
+  examples: |
+    - How to apply for sugarcane machinery subsidy?
+    - Where can I apply for sugarcane rental centers?
+    - Application process for sugarcane machinery
+    - Website for sugarcane machinery application
+    - How to get sugarcane machinery in [Villupuram](district)?
+    - கரும்பு இயந்திர மானியத்திற்கு எப்படி விண்ணப்பிப்பது?
+    - கரும்பு வாடகை மையங்களுக்கு எங்கு விண்ணப்பிக்கலாம்?
+    - கரும்பு இயந்திரங்களுக்கு விண்ணப்ப செயல்முறை
+    - கரும்பு இயந்திர விண்ணப்பத்திற்கு இணையதளம்
+    - [விழுப்புரத்தில்](district) கரும்பு இயந்திரங்கள் எப்படி பெறுவது?
+
+# Water Modernization
+- intent: ask_water_modernization
+  examples: |
+    - Water modernization subsidy
+    - Tell me about farm ponds
+    - How to apply for water schemes?
+    - Water modernization in [Lower Vaigai](district)
+    - Subsidy for water efficiency
+    - நீர்வள நவீனமயமாக்கல் மானியம்
+    - பண்ணைக் குட்டைகள் பற்றி சொல்லுங்கள்
+    - நீர் திட்டங்களுக்கு எப்படி விண்ணப்பிப்பது?
+    - [கீழ் வைகையில்](district) நீர்வள நவீனமயமாக்கல்
+    - நீர் திறனுக்கான மானியம்
+
+- intent: ask_water_modernization_details
+  examples: |
+    - What is the water modernization scheme?
+    - Details of farm pond subsidies
+    - Tell me about water modernization program
+    - Explain the water efficiency scheme
+    - Benefits of water modernization for farmers
+    - நீர்வள நவீனமயமாக்கல் திட்டம் என்றால் என்ன?
+    - பண்ணைக் குட்டை மானியங்கள் விவரங்கள்
+    - நீர்வள நவீனமயமாக்கல் திட்டத்தைப் பற்றி சொல்லுங்கள்
+    - நீர் திறன் திட்டத்தை விளக்குங்கள்
+    - விவசாயிகளுக்கு நீர்வள நவீனமயமாக்கலின் பயன்கள்
+
+- intent: ask_water_modernization_eligibility
+  examples: |
+    - Who is eligible for water modernization subsidy?
+    - Eligibility for farm pond scheme
+    - Can farmers in [Lower Vaigai](district) apply?
+    - Who can apply for water modernization?
+    - Criteria for water efficiency scheme
+    - நீர்வள நவீனமயமாக்கல் மானியத்திற்கு யார் தகுதியானவர்?
+    - பண்ணைக் குட்டை திட்டத்திற்கு தகுதி
+    - [கீழ் வைகையில்](district) உள்ள விவசாயிகள் விண்ணப்பிக்க முடியுமா?
+    - நீர்வள நவீனமயமாக்கலுக்கு யார் விண்ணப்பிக்கலாம்?
+    - நீர் திறன் திட்டத்திற்கு அளவுகோல்கள்
+
+- intent: ask_water_modernization_documents
+  examples: |
+    - What documents are needed for water modernization subsidy?
+    - Documents required for farm pond scheme
+    - Paperwork for water efficiency subsidies
+    - List documents for water modernization application
+    - What do I need to submit for farm ponds?
+    - நீர்வள நவீனமயமாக்கல் மானியத்திற்கு என்ன ஆவணங்கள் தேவை?
+    - பண்ணைக் குட்டை திட்டத்திற்கு தேவையான ஆவணங்கள்
+    - நீர் திறன் மானியங்களுக்கு ஆவணங்கள்
+    - நீர்வள நவீனமயமாக்கல் விண்ணப்பத்திற்கு ஆவணங்கள் பட்டியல்
+    - பண்ணைக் குட்டைகளுக்கு நான் என்ன சமர்ப்பிக்க வேண்டும்?
+
+- intent: ask_water_modernization_apply
+  examples: |
+    - How to apply for water modernization subsidy?
+    - Where can I apply for farm pond scheme?
+    - Application process for water modernization
+    - Website for water modernization application
+    - How to get farm ponds in [Lower Vaigai](district)?
+    - நீர்வள நவீனமயமாக்கல் மானியத்திற்கு எப்படி விண்ணப்பிப்பது?
+    - பண்ணைக் குட்டை திட்டத்திற்கு எங்கு விண்ணப்பிக்கலாம்?
+    - நீர்வள நவீனமயமாக்கலுக்கு விண்ணப்ப செயல்முறை
+    - நீர்வள நவீனமயமாக்கல் விண்ணப்பத்திற்கு இணையதளம்
+    - [கீழ் வைகையில்](district) பண்ணைக் குட்டைகள் எப்படி பெறுவது?
+
+# Land Development
+- intent: ask_land_development
+  examples: |
+    - Land development subsidy
+    - How to get bulldozer rental?
+    - Tell me about land shaping
+    - Five land development in [Dindigul](district)
+    - Subsidy for land leveling
+    - நில மேம்பாட்டு மானியம்
+    - புல்டோசர் வாடகையை எப்படி பெறுவது?
+    - நில வடிவமைப்பு பற்றி சொல்லுங்கள்
+    - [திண்டுக்கல்லில்](district) நில மேம்பாடு
+    - நில சமன்படுத்துதலுக்கான மானியம்
+
+- intent: ask_land_development_details
+  examples: |
+    - What is the land development scheme?
+    - Details of land leveling program
+    - Tell me about land development subsidies
+    - Explain the land shaping scheme
+    - Benefits of land development for farmers
+    - நில மேம்பாட்டு திட்டம் என்றால் என்ன?
+    - நில சமன்படுத்துதல் திட்ட விவரங்கள்
+    - நில மேம்பாட்டு மானியங்கள் பற்றி சொல்லுங்கள்
+    - நில வடிவமைப்பு திட்டத்தை விளக்குங்கள்
+    - விவசாயிகளுக்கு நில மேம்பாட்டின் பயன்கள்
+
+- intent: ask_land_development_eligibility
+  examples: |
+    - Who is eligible for land development subsidy?
+    - Eligibility for land leveling scheme
+    - Can [small farmers](farmer_type) get land development?
+    - Who can apply for bulldozer rental?
+    - Criteria for land development scheme
+    - நில மேம்பாட்டு மானியத்திற்கு யார் தகுதியானவர்?
+    - நில சமன்படுத்துதல் திட்டத்திற்கு தகுதி
+    - [சிறு விவசாயிகள்](farmer_type) நில மேம்பாடு பெற முடியுமா?
+    - புல்டோசர் வாடகைக்கு யார் விண்ணப்பிக்கலாம்?
+    - நில மேம்பாட்டு திட்டத்திற்கு அளவுகோல்கள்
+
+- intent: ask_land_development_documents
+  examples: |
+    - What documents are needed for land development subsidy?
+    - Documents required for land leveling scheme
+    - Paperwork for bulldozer rental
+    - List documents for land development application
+    - What do I need to submit for land shaping?
+    - நில மேம்பாட்டு மானியத்திற்கு என்ன ஆவணங்கள் தேவை?
+    - நில சமன்படுத்துதல் திட்டத்திற்கு தேவையான ஆவணங்கள்
+    - புல்டோசர் வாடகைக்கு ஆவணங்கள்
+    - நில மேம்பாட்டு விண்ணப்பத்திற்கு ஆவணங்கள் பட்டியல்
+    - நில வடிவமைப்புக்கு நான் என்ன சமர்ப்பிக்க வேண்டும்?
+
+- intent: ask_land_development_apply
+  examples: |
+    - How to apply for land development subsidy?
+    - Where can I apply for bulldozer rental?
+    - Application process for land leveling
+    - Website for land development application
+    - How to get land development in [Dindigul](district)?
+    - நில மேம்பாட்டு மானியத்திற்கு எப்படி விண்ணப்பிப்பது?
+    - புல்டோசர் வாடகைக்கு எங்கு விண்ணப்பிக்கலாம்?
+    - நில சமன்படுத்துதலுக்கு விண்ணப்ப செயல்முறை
+    - நில மேம்பாட்டு விண்ணப்பத்திற்கு இணையதளம்
+    - [திண்டுக்கல்லில்](district) நில மேம்பாடு எப்படி பெறுவது?
+
+# Solar Fencing
+- intent: ask_solar_fencing
+  examples: |
+    - Solar fencing subsidy
+    - How to apply for solar fences?
+    - Tell me about crop protection schemes
+    - Solar fencing in [Krishnagiri](district)
+    - Subsidy for animal protection
+    - சூரிய வேலி மானியம்
+    - சூரிய வேலிகளுக்கு எப்படி விண்ணப்பிப்பது?
+    - பயிர் பாதுகாப்பு திட்டங்கள் பற்றி சொல்லுங்கள்
+    - [கிருஷ்ணகிரியில்](district) சூரிய வேலி
+    - விலங்கு பாதுகாப்புக்கான மானியம்
+
+- intent: ask_solar_fencing_details
+  examples: |
+    - What is the solar fencing scheme?
+    - Details of crop protection fences
+    - Tell me about solar fencing subsidies
+    - Explain the solar fencing program
+    - Benefits of solar fencing for farmers
+    - சூரிய வேலி திட்டம் என்றால் என்ன?
+    - பயிர் பாதுகாப்பு வேலிகள் விவரங்கள்
+    - சூரிய வேலி மானியங்கள் பற்றி சொல்லுங்கள்
+    - சூரிய வேலி திட்டத்தை விளக்குங்கள்
+    - விவசாயிகளுக்கு சூரிய வேலியின் பயன்கள்
+
+- intent: ask_solar_fencing_eligibility
+  examples: |
+    - Who is eligible for solar fencing subsidy?
+    - Eligibility for solar fencing scheme
+    - Can [small farmers](farmer_type) get solar fencing?
+    - Who can apply for crop protection fences?
+    - Criteria for solar fencing scheme
+    - சூரிய வேலி மானியத்திற்கு யார் தகுதியானவர்?
+    - சூரிய வேலி திட்டத்திற்கு தகுதி
+    - [சிறு விவசாயிகள்](farmer_type) சூரிய வேலி பெற முடியுமா?
+    - பயிர் பாதுகாப்பு வேலிகளுக்கு யார் விண்ணப்பிக்கலாம்?
+    - சூரிய வேலி திட்டத்திற்கு அளவுகோல்கள்
+
+- intent: ask_solar_fencing_documents
+  examples: |
+    - What documents are needed for solar fencing subsidy?
+    - Documents required for solar fencing scheme
+    - Paperwork for crop protection fences
+    - List documents for solar fencing application
+    - What do I need to submit for solar fences?
+    - சூரிய வேலி மானியத்திற்கு என்ன ஆவணங்கள் தேவை?
+    - சூரிய வேலி திட்டத்திற்கு தேவையான ஆவணங்கள்
+    - பயிர் பாதுகா�ப்பு வேலிகளுக்கு ஆவணங்கள்
+    - சூரிய வேலி விண்ணப்பத்திற்கு ஆவணங்கள் பட்டியல்
+    - சூரிய வேலிகளுக்கு நான் என்ன சமர்ப்பிக்க வேண்டும்?
+
+- intent: ask_solar_fencing_apply
+  examples: |
+    - How to apply for solar fencing subsidy?
+    - Where can I apply for solar fences?
+    - Application process for solar fencing scheme
+    - Website for solar fencing application
+    - How to get solar fencing in [Krishnagiri](district)?
+    - சூரிய வேலி மானியத்திற்கு எப்படி விண்ணப்பிப்பது?
+    - சூரிய வேலிகளுக்கு எங்கு விண்ணப்பிக்கலாம்?
+    - சூரிய வேலி திட்டத்திற்கு விண்ணப்ப செயல்முறை
+    - சூரிய வேலி விண்ணப்பத்திற்கு இணையதளம்
+    - [கிருஷ்ணகிரியில்](district) சூரிய வேலி எப்படி பெறுவது?
+
+# PM-KISAN
+- intent: ask_pm_kisan
+  examples: |
+    - What is the PM-KISAN scheme in Tamil Nadu
+    - PM-KISAN scheme benefits
+    - How to apply for PM-KISAN scheme
+    - Eligibility for PM-KISAN subsidy
+    - Documents needed for PM-KISAN registration
+    - Benefits of PM-KISAN for farmers
+    - How to check PM-KISAN payment status
+    - Where to apply for PM-KISAN in Tamil Nadu
+    - PM-KISAN scheme application process
+    - Who can get PM-KISAN benefits
+    - How much money under PM-KISAN scheme
+    - PM-KISAN registration for small farmers
+    - Government support under PM-KISAN
+    - Steps to enroll in PM-KISAN scheme
+    - PM-KISAN scheme for marginal farmers
+    - Is PM-KISAN available for all farmers
+    - How to update PM-KISAN details
+    - PM-KISAN scheme for women farmers
+    - Where to submit PM-KISAN application
+    - PM-KISAN payment schedule
+    - How to register for PM-KISAN online
+    - PM KISAN scheme easy apply
+    - PM KISAN subsedy details
+    - PM KISAN eligiblity criterea
+    - PM KISAN documnts needed
+    - PM KISAN sheme apply process
+    - PM KISAN paymnt status check
+    - Goverment PM KISAN scheme info
+    - PM KISAN subsidy how much
+    - Farmar PM KISAN apply
+    - PM KISAN scheme detals
+    - PM-KISAN
+    - PM-KISAN scheme details
+    - How to apply for PM-KISAN?
+    - Tell me about farmer income support
+    - PM-KISAN திட்டம் தமிழ்நாட்டில் என்ன
+    - PM-KISAN திட்டத்திற்கு எப்படி விண்ணப்பிக்க வேண்டும்
+    - PM-KISAN மானியத்திற்கு தகுதி
+    - PM-KISAN பதிவுக்கு தேவையான ஆவணங்கள்
+    - விவசாயிகளுக்கு PM-KISAN திட்ட நன்மைகள்
+    - PM-KISAN பணம் நிலை எப்படி சரிபார்ப்பது
+    - தமிழ்நாட்டில் PM-KISAN திட்டத்திற்கு எங்கு விண்ணப்பிக்க
+    - PM-KISAN திட்ட விண்ணப்ப செயல்முறை
+    - PM-KISAN நன்மைகள் யாருக்கு கிடைக்கும்
+    - PM-KISAN திட்டத்தில் எவ்வளவு பணம்
+    - சிறு விவசாயிகளுக்கு PM-KISAN பதிவு
+    - PM-KISAN இல் அரசு உதவி
+    - PM-KISAN திட்டத்தில் சேர படிகள்
+    - குறு விவசாயிகளுக்கு PM-KISAN திட்டம்
+    - PM-KISAN திட்டம் எல்லா விவசாயிகளுக்கும் உள்ளதா
+    - PM-KISAN விவரங்களை எப்படி புதுப்பிப்பது
+    - பெண் விவசாயிகளுக்கு PM-KISAN திட்டம்
+    - PM-KISAN விண்ணப்பம் எங்கு சமர்ப்பிக்க வேண்டும்
+    - PM-KISAN பணம் வழங்கல் அட்டவணை
+    - PM-KISAN திட்டத்தில் ஆன்லைனில் பதிவு செய்வது எப்படி
+    - PM KISAN திட்ட தகவல்
+    - pm kisan thitta thagaval
+    - PM KISAN மானியம விவரங்கள்
+    - pm kisan maaniyam vivarangal
+    - PM KISAN தகுதி விதிகள்
+    - pm kisan thaguthi vithigal
+    - PM KISAN ஆவணங்கள் தேவை
+    - pm kisan aavanangal thevai
+    - விவசாயி PM KISAN விண்ணப்பம்
+    - vivasayi pm kisan vinnappam
+    - PM KISAN பணம் நிலை
+    - pm kisan panam nilai
+    - PM KISAN திட்டம எப்படி
+    - pm kisan thittam eppadi
+
+- intent: ask_pm_kisan_details
+  examples: |
+    - What is the PM-KISAN scheme?
+    - Details of farmer income support
+    - Tell me about PM-KISAN subsidies
+    - Explain the PM-KISAN program
+    - Benefits of PM-KISAN for farmers
+    - PM-KISAN திட்டம் என்றால் என்ன?
+    - விவசாயி வருமான ஆதரவு விவரங்கள்
+    - PM-KISAN மானியங்கள் பற்றி சொல்லுங்கள்
+    - PM-KISAN திட்டத்தை விளக்குங்கள்
+    - விவசாயிகளுக்கு PM-KISAN-னின் பயன்கள்
+    - What are the details of PM-KISAN scheme in Tamil Nadu
+    - Information about PM-KISAN scheme
+    - Benefits of PM-KISAN for farmers
+    - How much money under PM-KISAN scheme
+    - Details of PM-KISAN subsidy
+    - Features of PM-KISAN scheme
+    - PM-KISAN scheme for small farmers
+    - What is included in PM-KISAN benefits
+    - PM-KISAN scheme implementation in Tamil Nadu
+    - Government support under PM-KISAN
+    - PM-KISAN subsidy amount and benefits
+    - Details of PM-KISAN for marginal farmers
+    - Is PM-KISAN a free subsidy scheme
+    - PM-KISAN scheme coverage and benefits
+    - How does PM-KISAN scheme work
+    - PM-KISAN details for women farmers
+    - Terms and conditions of PM-KISAN scheme
+    - PM-KISAN payment schedule details
+    - What is the process of PM-KISAN subsidy
+    - PM-KISAN scheme overview
+    - PM KISAN scheme info
+    - PM KISAN subsedy detals
+    - PM KISAN benifits info
+    - PM KISAN sheme detalis
+    - PM KISAN subsidy how much
+    - PM KISAN documnts detals
+    - Goverment PM KISAN scheme info
+    - PM KISAN scheme process detals
+    - Farmar PM KISAN scheme detals
+    - PM KISAN scheme benifits
+    - PM-KISAN
+    - PM-KISAN திட்ட விவரங்கள் தமிழ்நாட்டில்
+    - PM-KISAN திட்டம் பற்றிய தகவல்கள்
+    - விவசாயிகளுக்கு PM-KISAN திட்ட நன்மைகள்
+    - PM-KISAN திட்டத்தில் எவ்வளவு பணம்
+    - PM-KISAN மானிய விவரங்கள்
+    - PM-KISAN திட்டத்தின் அம்சங்கள்
+    - சிறு விவசாயிகளுக்கு PM-KISAN திட்டம்
+    - PM-KISAN நன்மைகளில் என்ன உள்ளது
+    - தமிழ்நாட்டில் PM-KISAN திட்ட செயல்பாடு
+    - PM-KISAN இல் அரசு உதவி
+    - PM-KISAN மானிய தொகை மற்றும் நன்மைகள்
+    - குறு விவசாயிகளுக்கு PM-KISAN திட்ட விவரங்கள்
+    - PM-KISAN இலவச மானிய திட்டமா
+    - PM-KISAN திட்ட பரவல் மற்றும் நன்மைகள்
+    - PM-KISAN திட்டம் எப்படி செயல்படுகிறது
+    - பெண் விவசாயிகளுக்கு PM-KISAN விவரங்கள்
+    - PM-KISAN திட்ட விதிமுறைகள்
+    - PM-KISAN பணம் வழங்கல் அட்டவணை விவரங்கள்
+    - PM-KISAN மானிய செயல்முறை விவரங்கள்
+    - PM-KISAN திட்ட கண்ணோட்டம்
+    - PM KISAN திட்ட தகவல்
+    - pm kisan thitta thagaval
+    - PM KISAN மானியம விவரங்கள்
+    - pm kisan maaniyam vivarangal
+    - PM KISAN நன்மைகள் தகவல்
+    - pm kisan nanmaigal thagaval
+    - PM KISAN திட்டம விவரங்கள்
+    - pm kisan thittam vivarangal
+    - PM KISAN பணம் எவ்வளவு
+    - pm kisan panam evvalavu
+    - விவசாயி PM KISAN திட்ட விவரங்கள்
+    - vivasayi pm kisan thitta vivarangal
+    - PM KISAN செயல்முறை விவரங்கள்
+    - pm kisan seyal murai vivarangal
+
+- intent: ask_pm_kisan_eligibility
+  examples: |
+    - Who is eligible for PM-KISAN?
+    - Eligibility criteria for PM-KISAN scheme
+    - Can [small farmers](farmer_type) get PM-KISAN?
+    - Who can apply for PM-KISAN income support?
+    - PM-KISAN scheme requirements
+    - PM-KISAN-க்கு யார் தகுதியானவர்?
+    - PM-KISAN திட்டத்திற்கு தகுதி அளவுகோல்கள்
+    - [சிறு விவசாயிகள்](farmer_type) PM-KISAN பெற முடியுமா?
+    - PM-KISAN வருமான ஆதரவுக்கு யார் விண்ணப்பிக்கலாம்?
+    - PM-KISAN திட்டத்திற்கு தேவைகள்
+
+- intent: ask_pm_kisan_documents
+  examples: |
+    - What documents are needed for PM-KISAN in Tamil Nadu
+    - Documents required for PM-KISAN scheme
+    - Papers for PM-KISAN registration
+    - What to submit for PM-KISAN subsidy
+    - List of documents for PM-KISAN application
+    - PM-KISAN scheme application documents
+    - Docs needed for PM-KISAN registration
+    - Documents for PM-KISAN subsidy
+    - What papers for PM-KISAN scheme
+    - Required documents for PM-KISAN enrollment
+    - PM-KISAN document list for farmers
+    - Govt scheme documents for PM-KISAN
+    - Papers needed to apply for PM-KISAN
+    - Documents for small farmer PM-KISAN
+    - PM-KISAN scheme document requirements
+    - PM-KISAN application papers
+    - PM-KISAN documents for marginal farmers
+    - What to submit for PM-KISAN registration
+    - Documents for PM-KISAN online application
+    - Papers for women farmers PM-KISAN
+    - PM KISAN subsidy docs needed
+    - PM KISAN documnts required
+    - PM KISAN papers for apply
+    - PM KISAN sheme documnts
+    - PM KISAN subsidy papers
+    - PM KISAN documnts need
+    - Goverment PM KISAN scheme papers
+    - PM KISAN documents how to submit
+    - Farmar PM KISAN documents
+    - PM KISAN scheme docs
+    - What documents are needed for PM-KISAN?
+    - Documents required for PM-KISAN scheme
+    - Paperwork for PM-KISAN income support
+    - List documents for PM-KISAN application
+    - What do I need to submit for PM-KISAN?
+    - PM-KISAN-க்கு என்ன ஆவணங்கள் தேவை?
+    - PM-KISAN திட்டத்திற்கு தேவையான ஆவணங்கள்
+    - PM-KISAN வருமான ஆதரவுக்கு ஆவணங்கள்
+    - PM-KISAN விண்ணப்பத்திற்கு ஆவணங்கள் பட்டியல்
+    - PM-KISAN-க்கு நான் என்ன சமர்ப்பிக்க வேண்டும்?
+    - PM-KISAN தமிழ்நாட்டில் தேவையான ஆவணங்கள்
+    - PM-KISAN திட்டத்திற்கு ஆவணங்கள்
+    - PM-KISAN பதிவுக்கு தேவையான பேப்பர்கள்
+    - PM-KISAN மானியத்திற்கு என்ன சமர்ப்பிக்க வேண்டும்
+    - PM-KISAN விண்ணப்பத்திற்கு ஆவண பட்டியல்
+    - PM-KISAN திட்ட விண்ணப்ப ஆவணங்கள்
+    - PM-KISAN பதிவுக்கு தேவையான ஆவணங்கள்
+    - PM-KISAN மானியத்திற்கு ஆவணங்கள்
+    - PM-KISAN திட்டத்திற்கு என்ன பேப்பர்கள்
+    - PM-KISAN சேர்க்கைக்கு தேவையான ஆவணங்கள்
+    - விவசாயிகளுக்கு PM-KISAN ஆவண பட்டியல்
+    - PM-KISAN அரசு திட்ட ஆவணங்கள்
+    - PM-KISAN விண்ணப்பிக்க தேவையான பேப்பர்கள்
+    - சிறு விவசாயி PM-KISAN ஆவணங்கள்
+    - PM-KISAN திட்ட ஆவணத் தேவைகள்
+    - PM-KISAN விண்ணப்ப பேப்பர்கள்
+    - குறு விவசாயிகளுக்கு PM-KISAN ஆவணங்கள்
+    - PM-KISAN பதிவுக்கு என்ன சமர்ப்பிக்க வேண்டும்
+    - PM-KISAN ஆன்லைன் விண்ணப்ப ஆவணங்கள்
+    - பெண் விவசாயிகளுக்கு PM-KISAN ஆவணங்கள்
+    - PM KISAN ஆவணங்கள் தேவை
+    - pm kisan aavanangal thevai
+    - PM KISAN மானியம ஆவணங்கள்
+    - pm kisan maaniyam aavanangal
+    - PM KISAN திட்டம ஆவணங்கள்
+    - pm kisan thittam aavanangal
+    - PM KISAN பேப்பர்கள் தேவை
+    - pm kisan paepargal thevai
+    - விவசாயி PM KISAN ஆவணங்கள்
+    - vivasayi pm kisan aavanangal
+    - PM KISAN ஆவணங்கள் எப்படி
+    - pm kisan aavanangal eppadi
+
+- intent: ask_pm_kisan_apply
+  examples: |
+    - How to apply for PM-KISAN scheme in Tamil Nadu
+    - Process to apply for PM-KISAN subsidy
+    - How do I apply for PM-KISAN benefits
+    - Steps to register for PM-KISAN scheme
+    - Where to apply for PM-KISAN in Tamil Nadu
+    - Apply for PM-KISAN scheme online
+    - How to submit PM-KISAN application
+    - Application process for PM-KISAN subsidy
+    - How to enroll in PM-KISAN scheme
+    - Where to submit papers for PM-KISAN
+    - How to get PM-KISAN scheme application
+    - Govt scheme application for PM-KISAN
+    - How to apply for PM-KISAN online
+    - Steps for small farmer PM-KISAN application
+    - PM-KISAN scheme application procedure
+    - How to apply for PM-KISAN for marginal farmers
+    - Where to apply for PM-KISAN benefits
+    - How to register for PM-KISAN as women farmer
+    - Application process for PM-KISAN support
+    - How to sign up for PM-KISAN scheme
+    - PM KISAN subsidy apply easy way
+    - PM KISAN subsedy how apply
+    - PM KISAN apply process
+    - PM KISAN sheme aplication
+    - PM KISAN subsidy apply steps
+    - PM KISAN documnts apply
+    - Goverment PM KISAN scheme apply
+    - PM KISAN apply online steps
+    - Farmar PM KISAN apply
+    - PM KISAN scheme how to apply
+    - How to apply for PM-KISAN?
+    - Where can I apply for PM-KISAN?
+    - Application process for PM-KISAN scheme
+    - Website for PM-KISAN application
+    - How to get PM-KISAN in [Tirunelveli](district)?
+    - PM-KISAN-க்கு எப்படி விண்ணப்பிப்பது?
+    - PM-KISAN-க்கு எங்கு விண்ணப்பிக்கலாம்?
+    - PM-KISAN திட்டத்திற்கு விண்ணப்ப செயல்முறை
+    - PM-KISAN விண்ணப்பத்திற்கு இணையதளம்
+    - [திருநெல்வேலியில்](district) PM-KISAN எப்படி பெறுவது?
+    - Procedure
+    - PM-KISAN திட்டத்திற்கு தமிழ்நாட்டில் எப்படி விண்ணப்பிக்க
+    - PM-KISAN மானியத்திற்கு விண்ணப்ப செயல்முறை
+    - PM-KISAN நன்மைகளுக்கு எப்படி விண்ணப்பிப்பது
+    - PM-KISAN திட்டத்தில் பதிவு செய்ய படிகள்
+    - தமிழ்நாட்டில் PM-KISAN திட்டத்திற்கு எங்கு விண்ணப்பிக்க
+    - PM-KISAN திட்டத்திற்கு ஆன்லைனில் விண்ணப்பிக்க
+    - PM-KISAN விண்ணப்பத்தை எப்படி சமர்ப்பிப்பது
+    - PM-KISAN மானியத்திற்கு விண்ணப்ப செயல்முறை
+    - PM-KISAN திட்டத்தில் சேருவது எப்படி
+    - PM-KISAN ஆவணங்கள் எங்கு சமர்ப்பிக்க
+    - PM-KISAN திட்ட விண்ணப்பம் எப்படி பெறுவது
+    - PM-KISAN அரசு திட்ட விண்ணப்பம்
+    - PM-KISAN ஆன்லைனில் எப்படி விண்ணப்பிப்பது
+    - சிறு விவசாயி PM-KISAN விண்ணப்ப படிகள்
+    - PM-KISAN திட்ட விண்ணப்ப நடைமுறை
+    - குறு விவசாயிகளுக்கு PM-KISAN விண்ணப்பம்
+    - PM-KISAN நன்மைகளுக்கு எங்கு விண்ணப்பிக்க
+    - பெண் விவசாயியாக PM-KISAN பதிவு செய்வது
+    - PM-KISAN உதவிக்கு விண்ணப்ப செயல்முறை
+    - PM-KISAN திட்டத்தில் பதிவு செய்வது
+    - PM KISAN விண்ணப்பம் எப்படி
+    - pm kisan vinnappam eppadi
+    - PM KISAN மானியம விண்ணப்பம்
+    - pm kisan maaniyam vinnappam
+    - PM KISAN திட்டம விண்ணப்பம்
+    - pm kisan thittam vinnappam
+    - PM KISAN ஆன்லைன் விண்ணப்பம்
+    - pm kisan online vinnappam
+    - விவசாயி PM KISAN விண்ணப்பம்
+    - vivasayi pm kisan vinnappam
+    - PM KISAN விண்ணப்பம் செயல்முறை
+    - pm kisan vinnappam seyal murai

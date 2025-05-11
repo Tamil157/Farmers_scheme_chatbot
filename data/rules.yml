@@ -1,0 +1,290 @@
+version: "3.1"
+rules:
+- rule: Say goodbye
+  steps:
+  - intent: goodbye
+  - action: action_respond
+
+- rule: Update language
+  steps:
+  - intent: set_language
+  - action: action_set_language
+  - action: utter_language_updated
+
+- rule: Greet user
+  steps:
+  - intent: greet
+  - action: action_respond
+
+- rule: Respond to agricultural mechanization query
+  steps:
+  - intent: ask_agri_mechanization
+  - action: action_respond
+- rule: Respond to agricultural mechanization details
+  steps:
+  - intent: ask_agri_mechanization_details
+  - action: action_respond
+- rule: Respond to agricultural mechanization eligibility
+  steps:
+  - intent: ask_agri_mechanization_eligibility
+  - action: action_respond
+- rule: Respond to agricultural mechanization documents
+  steps:
+  - intent: ask_agri_mechanization_documents
+  - action: action_respond
+- rule: Respond to agricultural mechanization apply
+  steps:
+  - intent: ask_agri_mechanization_apply
+  - action: action_respond
+
+- rule: Respond to solar pumps query
+  steps:
+  - intent: ask_solar_pumps
+  - action: action_respond
+- rule: Respond to solar pumps details
+  steps:
+  - intent: ask_solar_pumps_details
+  - action: action_respond
+- rule: Respond to solar pumps eligibility
+  steps:
+  - intent: ask_solar_pumps_eligibility
+  - action: action_respond
+- rule: Respond to solar pumps documents
+  steps:
+  - intent: ask_solar_pumps_documents
+  - action: action_respond
+- rule: Respond to solar pumps apply
+  steps:
+  - intent: ask_solar_pumps_apply
+  - action: action_respond
+
+- rule: Respond to value addition query
+  steps:
+  - intent: ask_value_addition
+  - action: action_respond
+- rule: Respond to value addition details
+  steps:
+  - intent: ask_value_addition_details
+  - action: action_respond
+- rule: Respond to value addition eligibility
+  steps:
+  - intent: ask_value_addition_eligibility
+  - action: action_respond
+- rule: Respond to value addition documents
+  steps:
+  - intent: ask_value_addition_documents
+  - action: action_respond
+- rule: Respond to value addition apply
+  steps:
+  - intent: ask_value_addition_apply
+  - action: action_respond
+
+- rule: Respond to integrated development query
+  steps:
+  - intent: ask_integrated_development
+  - action: action_respond
+- rule: Respond to integrated development details
+  steps:
+  - intent: ask_integrated_development_details
+  - action: action_respond
+- rule: Respond to integrated development eligibility
+  steps:
+  - intent: ask_integrated_development_eligibility
+  - action: action_respond
+- rule: Respond to integrated development documents
+  steps:
+  - intent: ask_integrated_development_documents
+  - action: action_respond
+- rule: Respond to integrated development apply
+  steps:
+  - intent: ask_integrated_development_apply
+  - action: action_respond
+
+- rule: Respond to solar dryers query
+  steps:
+  - intent: ask_solar_dryers
+  - action: action_respond
+- rule: Respond to solar dryers details
+  steps:
+  - intent: ask_solar_dryers_details
+  - action: action_respond
+- rule: Respond to solar dryers eligibility
+  steps:
+  - intent: ask_solar_dryers_eligibility
+  - action: action_respond
+- rule: Respond to solar dryers documents
+  steps:
+  - intent: ask_solar_dryers_documents
+  - action: action_respond
+- rule: Respond to solar dryers apply
+  steps:
+  - intent: ask_solar_dryers_apply
+  - action: action_respond
+
+- rule: Respond to electric pumps query
+  steps:
+  - intent: ask_electric_pumps
+  - action: action_respond
+- rule: Respond to electric pumps details
+  steps:
+  - intent: ask_electric_pumps_details
+  - action: action_respond
+- rule: Respond to electric pumps eligibility
+  steps:
+  - intent: ask_electric_pumps_eligibility
+  - action: action_respond
+- rule: Respond to electric pumps documents
+  steps:
+  - intent: ask_electric_pumps_documents
+  - action: action_respond
+- rule: Respond to electric pumps apply
+  steps:
+  - intent: ask_electric_pumps_apply
+  - action: action_respond
+
+- rule: Respond to micro irrigation query
+  steps:
+  - intent: ask_micro_irrigation
+  - action: action_respond
+- rule: Respond to micro irrigation details
+  steps:
+  - intent: ask_micro_irrigation_details
+  - action: action_respond
+- rule: Respond to micro irrigation eligibility
+  steps:
+  - intent: ask_micro_irrigation_eligibility
+  - action: action_respond
+- rule: Respond to micro irrigation documents
+  steps:
+  - intent: ask_micro_irrigation_documents
+  - action: action_respond
+- rule: Respond to micro irrigation apply
+  steps:
+  - intent: ask_micro_irrigation_apply
+  - action: action_respond
+
+- rule: Respond to auto pump control query
+  steps:
+  - intent: ask_auto_pump_control
+  - action: action_respond
+- rule: Respond to auto pump control details
+  steps:
+  - intent: ask_auto_pump_control_details
+  - action: action_respond
+- rule: Respond to auto pump control eligibility
+  steps:
+  - intent: ask_auto_pump_control_eligibility
+  - action: action_respond
+- rule: Respond to auto pump control documents
+  steps:
+  - intent: ask_auto_pump_control_documents
+  - action: action_respond
+- rule: Respond to auto pump control apply
+  steps:
+  - intent: ask_auto_pump_control_apply
+  - action: action_respond
+
+- rule: Respond to sugarcane machinery query
+  steps:
+  - intent: ask_sugarcane_machinery
+  - action: action_respond
+- rule: Respond to sugarcane machinery details
+  steps:
+  - intent: ask_sugarcane_machinery_details
+  - action: action_respond
+- rule: Respond to sugarcane machinery eligibility
+  steps:
+  - intent: ask_sugarcane_machinery_eligibility
+  - action: action_respond
+- rule: Respond to sugarcane machinery documents
+  steps:
+  - intent: ask_sugarcane_machinery_documents
+  - action: action_respond
+- rule: Respond to sugarcane machinery apply
+  steps:
+  - intent: ask_sugarcane_machinery_apply
+  - action: action_respond
+
+- rule: Respond to water modernization query
+  steps:
+  - intent: ask_water_modernization
+  - action: action_respond
+- rule: Respond to water modernization details
+  steps:
+  - intent: ask_water_modernization_details
+  - action: action_respond
+- rule: Respond to water modernization eligibility
+  steps:
+  - intent: ask_water_modernization_eligibility
+  - action: action_respond
+- rule: Respond to water modernization documents
+  steps:
+  - intent: ask_water_modernization_documents
+  - action: action_respond
+- rule: Respond to water modernization apply
+  steps:
+  - intent: ask_water_modernization_apply
+  - action: action_respond
+
+- rule: Respond to land development query
+  steps:
+  - intent: ask_land_development
+  - action: action_respond
+- rule: Respond to land development details
+  steps:
+  - intent: ask_land_development_details
+  - action: action_respond
+- rule: Respond to land development eligibility
+  steps:
+  - intent: ask_land_development_eligibility
+  - action: action_respond
+- rule: Respond to land development documents
+  steps:
+  - intent: ask_land_development_documents
+  - action: action_respond
+- rule: Respond to land development apply
+  steps:
+  - intent: ask_land_development_apply
+  - action: action_respond
+
+- rule: Respond to solar fencing query
+  steps:
+  - intent: ask_solar_fencing
+  - action: action_respond
+- rule: Respond to solar fencing details
+  steps:
+  - intent: ask_solar_fencing_details
+  - action: action_respond
+- rule: Respond to solar fencing eligibility
+  steps:
+  - intent: ask_solar_fencing_eligibility
+  - action: action_respond
+- rule: Respond to solar fencing documents
+  steps:
+  - intent: ask_solar_fencing_documents
+  - action: action_respond
+- rule: Respond to solar fencing apply
+  steps:
+  - intent: ask_solar_fencing_apply
+  - action: action_respond
+
+- rule: Respond to PM-KISAN query
+  steps:
+  - intent: ask_pm_kisan
+  - action: action_respond
+- rule: Respond to PM-KISAN details
+  steps:
+  - intent: ask_pm_kisan_details
+  - action: action_respond
+- rule: Respond to PM-KISAN eligibility
+  steps:
+  - intent: ask_pm_kisan_eligibility
+  - action: action_respond
+- rule: Respond to PM-KISAN documents
+  steps:
+  - intent: ask_pm_kisan_documents
+  - action: action_respond
+- rule: Respond to PM-KISAN apply
+  steps:
+  - intent: ask_pm_kisan_apply
+  - action: action_respond

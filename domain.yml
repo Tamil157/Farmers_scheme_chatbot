@@ -1,0 +1,92 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - set_language
+  - inform
+  - ask_agri_mechanization
+  - ask_agri_mechanization_details
+  - ask_agri_mechanization_eligibility
+  - ask_agri_mechanization_documents
+  - ask_agri_mechanization_apply
+  - ask_solar_pumps
+  - ask_solar_pumps_details
+  - ask_solar_pumps_eligibility
+  - ask_solar_pumps_documents
+  - ask_solar_pumps_apply
+  - ask_value_addition
+  - ask_value_addition_details
+  - ask_value_addition_eligibility
+  - ask_value_addition_documents
+  - ask_value_addition_apply
+  - ask_integrated_development
+  - ask_integrated_development_details
+  - ask_integrated_development_eligibility
+  - ask_integrated_development_documents
+  - ask_integrated_development_apply
+  - ask_solar_dryers
+  - ask_solar_dryers_details
+  - ask_solar_dryers_eligibility
+  - ask_solar_dryers_documents
+  - ask_solar_dryers_apply
+  - ask_electric_pumps
+  - ask_electric_pumps_details
+  - ask_electric_pumps_eligibility
+  - ask_electric_pumps_documents
+  - ask_electric_pumps_apply
+  - ask_micro_irrigation
+  - ask_micro_irrigation_details
+  - ask_micro_irrigation_eligibility
+  - ask_micro_irrigation_documents
+  - ask_micro_irrigation_apply
+  - ask_auto_pump_control
+  - ask_auto_pump_control_details
+  - ask_auto_pump_control_eligibility
+  - ask_auto_pump_control_documents
+  - ask_auto_pump_control_apply
+  - ask_sugarcane_machinery
+  - ask_sugarcane_machinery_details
+  - ask_sugarcane_machinery_eligibility
+  - ask_sugarcane_machinery_documents
+  - ask_sugarcane_machinery_apply
+  - ask_water_modernization
+  - ask_water_modernization_details
+  - ask_water_modernization_eligibility
+  - ask_water_modernization_documents
+  - ask_water_modernization_apply
+  - ask_land_development
+  - ask_land_development_details
+  - ask_land_development_eligibility
+  - ask_land_development_documents
+  - ask_land_development_apply
+  - ask_solar_fencing
+  - ask_solar_fencing_details
+  - ask_solar_fencing_eligibility
+  - ask_solar_fencing_documents
+  - ask_solar_fencing_apply
+  - ask_pm_kisan
+  - ask_pm_kisan_details
+  - ask_pm_kisan_eligibility
+  - ask_pm_kisan_documents
+  - ask_pm_kisan_apply
+
+responses:
+  utter_language_updated:
+    - text: "Language updated successfully. How can I assist you now?"
+    - text: "மொழி வெற்றிகரமாக புதுப்பிக்கப்பட்டது. இப்போது உங்களுக்கு எப்படி உதவலாம்?"
+
+slots:
+  language:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: custom
+
+actions:
+  - action_respond
+  - action_set_language
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

@@ -1,0 +1,44 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-district",
+      "2": "I-district",
+      "3": "L-district",
+      "4": "U-district",
+      "5": "B-farmer_type",
+      "6": "I-farmer_type",
+      "7": "L-farmer_type",
+      "8": "U-farmer_type",
+      "9": "B-language",
+      "10": "I-language",
+      "11": "L-language",
+      "12": "U-language",
+      "13": "B-scheme_name",
+      "14": "I-scheme_name",
+      "15": "L-scheme_name",
+      "16": "U-scheme_name",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-district": 1,
+      "I-district": 2,
+      "L-district": 3,
+      "U-district": 4,
+      "B-farmer_type": 5,
+      "I-farmer_type": 6,
+      "L-farmer_type": 7,
+      "U-farmer_type": 8,
+      "B-language": 9,
+      "I-language": 10,
+      "L-language": 11,
+      "U-language": 12,
+      "B-scheme_name": 13,
+      "I-scheme_name": 14,
+      "L-scheme_name": 15,
+      "U-scheme_name": 16,
+      "O": 0
+    },
+    "num_tags": 17
+  }
+]

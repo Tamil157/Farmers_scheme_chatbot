@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-translate="title">Farmers' Scheme Voice Chatbot</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom animations */
+    @keyframes slideIn {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .chat-message {
+      animation: slideIn 0.3s ease-out;
+    }
+    /* Scrollbar styling */
+    #chatArea::-webkit-scrollbar, #pastChats::-webkit-scrollbar {
+      width: 8px;
+    }
+    #chatArea::-webkit-scrollbar-track, #pastChats::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 4px;
+    }
+    #chatArea::-webkit-scrollbar-thumb, #pastChats::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 4px;
+    }
+    #chatArea::-webkit-scrollbar-thumb:hover, #pastChats::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+    /* Sidebar transition */
+    .sidebar {
+      transition: width 0.3s ease;
+    }
+    .sidebar-collapsed {
+      width: 0 !important;
+      overflow: hidden;
+    }
+    /* Listening animation */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+    .listening {
+      animation: pulse 1s infinite;
+    }
+    /* Link styling */
+    .chat-link {
+      color: #1d4ed8;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    .chat-link:hover {
+      color: #2563eb;
+    }
+    /* Read Aloud button styling */
+    .read-aloud-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #4b5563;
+      font-size: 1.2rem;
+      margin-left: 8px;
+      vertical-align: middle;
+      transition: color 0.2s;
+    }
+    .read-aloud-btn:hover {
+      color: #2563eb;
+    }
+  </style>
+</head>
+<body class="bg-gray-200 min-h-screen flex">
+  <!-- Sidebar -->
+  <div id="sidebar" class="sidebar bg-gray-800 text-white w-64 flex flex-col shadow-lg md:w-80">
+    <!-- Sidebar Header -->
+    <div class="p-4 border-b border-gray-700 flex items-center justify-between">
+      <h2 class="text-lg font-semibold" data-translate="sidebar_header">Chat History</h2>
+      <button id="toggleSidebar" class="text-white hover:text-gray-300 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <!-- New Chat Button -->
+    <button id="newChatButton" class="m-4 bg-green-600 text-white p-2 rounded-lg hover:bg-green-700 transition duration-200" data-translate="new_chat">
+      New Chat
+    </button>
+    <!-- Past Chats List -->
+    <div id="pastChats" class="flex-1 overflow-y-auto p-2">
+      <!-- Past chats will be dynamically added here -->
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="flex-1 flex items-center justify-center p-4">
+    <div class="bg-white w-full max-w-3xl h-[90vh] flex flex-col rounded-2xl shadow-2xl overflow-hidden">
+      <!-- Header -->
+      <div class="bg-gradient-to-r from-green-600 to-green-800 text-white p-6 rounded-t-2xl flex items-center justify-between">
+        <div>
+          <h1 class="text-2xl font-bold tracking-tight" data-translate="header">Farmers' Scheme Voice Assistant</h1>
+          <p class="text-sm opacity-80 mt-1" data-translate="subheader">Your guide to agricultural schemes and support</p>
+        </div>
+        <button id="openSidebar" class="md:hidden text-white hover:text-gray-300 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Chat Area -->
+      <div id="chatArea" class="flex-1 p-6 overflow-y-auto bg-gray-50">
+        <div class="chat-message bot mb-4">
+          <p class="bg-green-100 text-gray-800 p-4 rounded-xl shadow-sm max-w-[80%] inline-block" data-translate="welcome_message">Hello! I'm here to help with farmers' schemes. Select a language, click the mic to speak, or type your question!</p>
+        </div>
+      </div>
+
+      <!-- Input Area -->
+      <div class="p-6 border-t border-gray-200 bg-white">
+        <div class="flex space-x-3 mb-4">
+          <select id="languageSelect" class="p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 bg-white text-gray-800 font-medium transition duration-200">
+            <option value="en-US" data-lang="en">English</option>
+            <option value="ta-IN" data-lang="ta">Tamil</option>
+          </select>
+          <button id="ttsToggle" class="bg-purple-600 text-white p-3 rounded-xl hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-200 text-lg" title="Toggle Text-to-Speech">
+            🔊
+          </button>
+        </div>
+        <div class="flex space-x-3">
+          <button id="voiceButton" class="bg-blue-600 text-white p-3 rounded-xl hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200 text-lg">
+            🎤
+          </button>
+          <input
+            type="text"
+            id="userInput"
+            data-translate="placeholder"
+            placeholder="Type or speak your question..."
+            class="flex-1 p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 bg-white text-gray-800 placeholder-gray-500 transition duration-200"
+          />
+          <button
+            id="sendButton"
+            class="bg-green-600 text-white p-3 rounded-xl hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-200 font-medium"
+            data-translate="send_button"
+          >
+            Send
+          </button>
+        </div>
+        <p id="listeningStatus" class="text-sm text-gray-500 mt-2 hidden" data-translate="listening">Listening...</p>
+        <p id="micInstructions" class="text-sm text-gray-500 mt-2 hidden" data-translate="mic_instructions">If speech isn't working, check your microphone permissions or try typing your question.</p>
+        <p id="ttsInstructions" class="text-sm text-gray-500 mt-2 hidden" data-translate="tts_instructions">Voice output is unavailable. Messages will still appear in the chat.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const translations = {
+      en: {
+        title: "Farmers' Scheme  Chatbot",
+        header: "Farmers' Scheme  Assistant",
+        subheader: "Your guide to agricultural schemes and support",
+        welcome_message: "Hello! I'm here to help with farmers' schemes. Select a language, click the mic to speak, or type your question!",
+        placeholder: "Type or speak your question...",
+        send_button: "Send",
+        sidebar_header: "Chat History",
+        new_chat: "New Chat",
+        listening: "Listening...",
+        mic_instructions: "If speech isn't working, check your microphone permissions or try typing your question.",
+        tts_instructions: "Voice output is unavailable. Messages will still appear in the chat.",
+        error_no_speech: "No speech detected. Please try speaking again.",
+        error_no_mic: "Microphone not accessible. Please check your permissions.",
+        error_network: "Network issue. Please check your connection and try again.",
+        error_default: "Sorry, I couldn’t understand. Please try again.",
+        error_speech_failed: "Speech recognition failed multiple times. Please try typing your question or check your microphone.",
+        error_tts_failed: "Unable to generate voice output. Please check the Text-to-Speech service.",
+      },
+      ta: {
+        title: "விவசாயிகள் திட்ட  உதவியாளர்",
+        header: "விவசாயிகள் திட்ட  உதவியாளர்",
+        subheader: "வேளாண்மை திட்டங்கள் மற்றும் ஆதரவுக்கான உங்கள் வழிகாட்டி",
+        welcome_message: "வணக்கம்! விவசாயிகள் திட்டங்களுக்கு உதவ இங்கு இருக்கிறேன். ஒரு மொழியைத் தேர்ந்தெடுக்கவும், மைக் கிளிக் செய்து பேசவும் அல்லது உங்கள் கேளவியை தட்டச்சு செய்யவும்!",
+        placeholder: "உங்கள் கேளவியை தட்டச்சு செய்யவும் அல்லது பேசவும்...",
+        send_button: "அனுப்பு",
+        sidebar_header: "அரட்டை வரலாறு",
+        new_chat: "புதிய அரட்டை",
+        listening: "கேட்கிறது...",
+        mic_instructions: "பேச்சு வேலை செய்யவில்லை என்றால், உங்கள் மைக்ரோஃபோன் அனுமதிகளைச் சரிபார்க்கவும் அல்லது உங்கள் கேளவியை தட்டச்சு செய்ய முயற்சிக்கவும்.",
+        tts_instructions: "குரல் வெளியீடு கிடைக்கவில்லை. செய்திகள் இன்னும் அரட்டையில் தோன்றும்.",
+        error_no_speech: "பேச்சு கண்டறியப்படவில்லை. மீண்டும் பேச முயற்சிக்கவும்.",
+        error_no_mic: "மைக்ரோஃபோன் அணுக முடியவில்லை. உங்கள் அனுமதிகளைச் சரிபார்க்கவும்.",
+        error_network: "பிணைய பிரச்சனை. உங்கள் இணைப்பைச் சரிபார்த்து மீண்டும் முயற்சிக்கவும்.",
+        error_default: "மன்னிக்கவும், என்னால் புரிந்து கொள்ள முடியவில்லை. மீண்டும் முயற்சிக்கவும்.",
+        error_speech_failed: "பேச்சு அங்கீகாரம் பல முறை தோல்வியடைந்தது. உங்கள் கேளவியை தட்டச்சு செய்ய முயற்சிக்கவும் அல்லது உங்கள் மைக்ரோஃபோனைச் சரிபார்க்கவும்.",
+        error_tts_failed: "குரல் வெளியீடு உருவாக்க முடியவில்லை. பேச்சு-உரை சேவையை சரிபார்க்கவும்.",
+      },
+    };
+
+    const chatArea = document.getElementById('chatArea');
+    const userInput = document.getElementById('userInput');
+    const sendButton = document.getElementById('sendButton');
+    const voiceButton = document.getElementById('voiceButton');
+    const languageSelect = document.getElementById('languageSelect');
+    const pastChats = document.getElementById('pastChats');
+    const newChatButton = document.getElementById('newChatButton');
+    const toggleSidebar = document.getElementById('toggleSidebar');
+    const openSidebar = document.getElementById('openSidebar');
+    const sidebar = document.getElementById('sidebar');
+    const listeningStatus = document.getElementById('listeningStatus');
+    const micInstructions = document.getElementById('micInstructions');
+    const ttsInstructions = document.getElementById('ttsInstructions');
+    const ttsToggle = document.getElementById('ttsToggle');
+
+    // Web Speech API for Speech-to-Text
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const recognition = new SpeechRecognition();
+    let isRecognizing = false; // Track recognition state
+    let currentChatId = null;
+    let chats = JSON.parse(localStorage.getItem('farmersChats')) || {};
+    let noSpeechCount = 0; // Track consecutive no-speech errors
+    const MAX_NO_SPEECH_ATTEMPTS = 3; // Max attempts before suggesting typing
+    let ttsAvailable = true; // Track Text-to-Speech availability
+    let ttsEnabled = true; // Track TTS toggle state
+
+    // Function to generate a UUID
+    function generateUUID() {
+      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        const r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+      });
+    }
+
+    // Function to update UI based on selected language
+    function updateUI(language) {
+      document.querySelectorAll('[data-translate]').forEach((element) => {
+        const key = element.getAttribute('data-translate');
+        if (element.tagName === 'INPUT') {
+          element.placeholder = translations[language][key];
+        } else {
+          element.textContent = translations[language][key];
+        }
+      });
+      document.title = translations[language].title;
+
+      // Update the welcome message in the chat area
+      const welcomeMessage = chatArea.querySelector('.chat-message.bot p');
+      if (welcomeMessage) {
+        welcomeMessage.textContent = translations[language].welcome_message;
+      }
+    }
+
+    // Function to save chat to localStorage
+    function saveChat() {
+      if (currentChatId) {
+        const messages = Array.from(chatArea.querySelectorAll('.chat-message')).map((msg) => ({
+          text: msg.querySelector('p').innerText,
+          isBot: msg.classList.contains('bot'),
+        }));
+        chats[currentChatId].messages = messages;
+        localStorage.setItem('farmersChats', JSON.stringify(chats));
+      }
+    }
+
+    // Function to load chat
+    function loadChat(chatId) {
+      currentChatId = chatId;
+      chatArea.innerHTML = '';
+      if (chats[chatId]) {
+        chats[chatId].messages.forEach((msg) => {
+          addMessage(msg.text, msg.isBot, false); // Pass false to skip speaking when loading
+        });
+      } else {
+        const lang = languageSelect.options[languageSelect.selectedIndex].getAttribute('data-lang');
+        addMessage(translations[lang].welcome_message, true);
+      }
+      updatePastChats();
+    }
+
+    // Function to update past chats list
+    function updatePastChats() {
+      pastChats.innerHTML = '';
+      Object.keys(chats).forEach((chatId) => {
+        const chat = chats[chatId];
+        const chatItem = document.createElement('div');
+        chatItem.className = `p-2 rounded-lg hover:bg-gray-700 cursor-pointer ${currentChatId === chatId ? 'bg-gray-600' : ''}`;
+        chatItem.innerHTML = `
+          <p class="text-sm">${chat.title}</p>
+          <p class="text-xs text-gray-400">${new Date(chat.timestamp).toLocaleString()}</p>
+        `;
+        chatItem.addEventListener('click', () => loadChat(chatId));
+        pastChats.appendChild(chatItem);
+      });
+    }
+
+    // Start a new chat
+    newChatButton.addEventListener('click', () => {
+      const chatId = generateUUID();
+      const lang = languageSelect.options[languageSelect.selectedIndex].getAttribute('data-lang');
+      chats[chatId] = {
+        title: `Chat ${Object.keys(chats).length + 1}`,
+        timestamp: new Date().toISOString(),
+        messages: [],
+      };
+      loadChat(chatId);
+      saveChat();
+      noSpeechCount = 0; // Reset no-speech count
+      micInstructions.classList.add('hidden');
+      ttsInstructions.classList.add('hidden');
+    });
+
+    // Toggle sidebar
+    toggleSidebar.addEventListener('click', () => {
+      sidebar.classList.toggle('sidebar-collapsed');
+    });
+    openSidebar.addEventListener('click', () => {
+      sidebar.classList.toggle('sidebar-collapsed');
+    });
+
+    // Toggle TTS
+    ttsToggle.addEventListener('click', () => {
+      ttsEnabled = !ttsEnabled;
+      ttsToggle.classList.toggle('bg-purple-600', ttsEnabled);
+      ttsToggle.classList.toggle('bg-gray-400', !ttsEnabled);
+    });
+
+    // Set initial language
+    recognition.lang = languageSelect.value;
+    updateUI('en'); // Default to English
+
+    // Update language when user selects
+    languageSelect.addEventListener('change', () => {
+      recognition.lang = languageSelect.value;
+      const selectedOption = languageSelect.options[languageSelect.selectedIndex];
+      const lang = selectedOption.getAttribute('data-lang');
+      updateUI(lang);
+      if (currentChatId && chats[currentChatId].messages.length === 0) {
+        chatArea.innerHTML = '';
+        addMessage(translations[lang].welcome_message, true);
+      }
+    });
+
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
+
+    // Add message to chat area with URL detection and read aloud button for bot messages
+    function addMessage(message, isBot = false, speak = true) {
+      const messageDiv = document.createElement('div');
+      messageDiv.className = `chat-message ${isBot ? 'bot' : 'user'} mb-4`;
+      
+      // Process message for URLs if it's a bot message
+      let processedMessage = message;
+      if (isBot) {
+        // Regular expression to match URLs
+        const urlRegex = /(https?:\/\/[^\s]+)/g;
+        processedMessage = message.replace(urlRegex, (url) => {
+          return `<a href="${url}" class="chat-link" target="_blank" rel="noopener noreferrer">${url}</a>`;
+        });
+      }
+      
+      // Create message content
+      let messageContent = `
+        <p class="${isBot ? 'bg-green-100 text-gray-800' : 'bg-blue-100 text-gray-800'} p-4 rounded-xl shadow-sm max-w-[80%] inline-block">${processedMessage}</p>
+      `;
+      
+      // Add read aloud button for bot messages
+      if (isBot) {
+        messageContent += `
+          <button class="read-aloud-btn" title="Read Aloud">🔊</button>
+        `;
+      }
+      
+      messageDiv.innerHTML = messageContent;
+      chatArea.appendChild(messageDiv);
+      
+      // Attach event listener to read aloud button
+      if (isBot) {
+        const readAloudButton = messageDiv.querySelector('.read-aloud-btn');
+        readAloudButton.addEventListener('click', () => {
+          if (ttsAvailable && ttsEnabled) {
+            speakMessage(message);
+          }
+        });
+      }
+      
+      chatArea.scrollTop = chatArea.scrollHeight;
+      if (speak && ttsAvailable && ttsEnabled && isBot) speakMessage(message); // Speak only if TTS is available, enabled, and it's a bot message
+      saveChat();
+    }
+
+    // Send message to Rasa server
+    async function sendMessageToRasa(message) {
+      try {
+        const response = await fetch('http://localhost:5005/webhooks/rest/webhook', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            sender: 'user',
+            message: message,
+          }),
+        });
+
+        const data = await response.json();
+        data.forEach((item) => {
+          if (item.text) {
+            addMessage(item.text, true);
+          }
+        });
+      } catch (error) {
+        console.error('Error communicating with Rasa:', error);
+        const lang = languageSelect.options[languageSelect.selectedIndex].getAttribute('data-lang');
+        addMessage(
+          lang === 'ta'
+            ? translations.ta.error_network
+            : translations.en.error_network,
+          true
+        );
+      }
+    }
+
+    // Text-to-Speech in the selected language
+    async function speakMessage(message) {
+      const lang = languageSelect.options[languageSelect.selectedIndex].getAttribute('data-lang');
+      const languageCode = lang === 'en' ? 'en-US' : 'ta-IN';
+      let textToSpeak = message;
+
+      // Translate message if the selected language is Tamil and the message is in English
+      if (lang === 'ta') {
+        try {
+          const translationResponse = await fetch('http://localhost:3000/translate', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              text: message,
+              targetLanguage: 'ta',
+            }),
+          });
+          if (!translationResponse.ok) {
+            throw new Error(`Translation error! Status: ${translationResponse.status}`);
+          }
+          const translationData = await translationResponse.json();
+          textToSpeak = translationData.translatedText || message;
+        } catch (translationError) {
+          console.warn('Translation to Tamil failed:', translationError);
+          textToSpeak = message; // Fallback to original message
+        }
+      }
+
+      try {
+        const response = await fetch('http://localhost:3000/synthesize', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            text: textToSpeak,
+            languageCode: languageCode,
+          }),
+        });
+        if (!response.ok) {
+          throw new Error(`TTS error! Status: ${response.status}`);
+        }
+        const audioBlob = await response.blob();
+        const audioUrl = URL.createObjectURL(audioBlob);
+        const audio = new Audio(audioUrl);
+        await new Promise((resolve) => {
+          audio.onended = resolve;
+          audio.play();
+        });
+
+        ttsInstructions.classList.add('hidden');
+      } catch (error) {
+        console.error('Error synthesizing speech:', error.message, error.stack);
+        ttsAvailable = false; // Mark TTS as unavailable
+        const lang = languageSelect.options[languageSelect.selectedIndex].getAttribute('data-lang');
+        addMessage(
+          lang === 'ta'
+            ? translations.ta.error_tts_failed
+            : translations.en.error_tts_failed,
+          true,
+          false // Don't attempt to speak the error message
+        );
+        ttsInstructions.classList.remove('hidden');
+      }
+    }
+
+    // Debounce function to prevent rapid clicks
+    function debounce(func, wait) {
+      let timeout;
+      return function executedFunction(...args) {
+        const later = () => {
+          clearTimeout(timeout);
+          func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+      };
+    }
+
+    // Voice button click event
+    const handleVoiceButtonClick = debounce(() => {
+      if (!isRecognizing) {
+        try {
+          recognition.start();
+          isRecognizing = true;
+          voiceButton.classList.add('bg-red-600', 'listening');
+          voiceButton.classList.remove('bg-blue-600');
+          listeningStatus.classList.remove('hidden');
+          micInstructions.classList.add('hidden');
+        } catch (error) {
+          console.error('Error starting recognition:', error);
+          const lang = languageSelect.options[languageSelect.selectedIndex].getAttribute('data-lang');
+          addMessage(
+            lang === 'ta'
+              ? translations.ta.error_no_mic
+              : translations.en.error_no_mic,
+            true
+          );
+          isRecognizing = false;
+          voiceButton.classList.remove('bg-red-600', 'listening');
+          voiceButton.classList.add('bg-blue-600');
+          listeningStatus.classList.add('hidden');
+        }
+      } else {
+        recognition.stop();
+      }
+    }, 300);
+
+    voiceButton.addEventListener('click', handleVoiceButtonClick);
+
+    // Speech recognition result
+    recognition.onresult = (event) => {
+      const transcript = event.results[0][0].transcript;
+      userInput.value = transcript;
+      sendButton.click(); // Trigger send
+      noSpeechCount = 0; // Reset no-speech count
+      micInstructions.classList.add('hidden');
+    };
+
+    // Speech recognition end
+    recognition.onend = () => {
+      isRecognizing = false;
+      voiceButton.classList.remove('bg-red-600', 'listening');
+      voiceButton.classList.add('bg-blue-600');
+      listeningStatus.classList.add('hidden');
+    };
+
+    // Speech recognition error
+    recognition.onerror = (event) => {
+      console.error('Speech recognition error:', event.error);
+      isRecognizing = false;
+      voiceButton.classList.remove('bg-red-600', 'listening');
+      voiceButton.classList.add('bg-blue-600');
+      listeningStatus.classList.add('hidden');
+      const lang = languageSelect.options[languageSelect.selectedIndex].getAttribute('data-lang');
+      let errorMessage;
+      switch (event.error) {
+        case 'no-speech':
+          noSpeechCount++;
+          errorMessage = lang === 'ta' ? translations.ta.error_no_speech : translations.en.error_no_speech;
+          if (noSpeechCount >= MAX_NO_SPEECH_ATTEMPTS) {
+            errorMessage = lang === 'ta' ? translations.ta.error_speech_failed : translations.en.error_speech_failed;
+            micInstructions.classList.remove('hidden');
+            noSpeechCount = 0; // Reset after showing fallback message
+          }
+          break;
+        case 'not-allowed':
+        case 'service-not-allowed':
+          errorMessage = lang === 'ta' ? translations.ta.error_no_mic : translations.en.error_no_mic;
+          micInstructions.classList.remove('hidden');
+          break;
+        case 'network':
+          errorMessage = lang === 'ta' ? translations.ta.error_network : translations.en.error_network;
+          break;
+        default:
+          errorMessage = lang === 'ta' ? translations.ta.error_default : translations.en.error_default;
+      }
+      addMessage(errorMessage, true);
+    };
+
+    // Send button click event
+    sendButton.addEventListener('click', () => {
+      const message = userInput.value.trim();
+      if (message) {
+        if (!currentChatId) {
+          const chatId = generateUUID();
+          chats[chatId] = {
+            title: `Chat ${Object.keys(chats).length + 1}`,
+            timestamp: new Date().toISOString(),
+            messages: [],
+          };
+          currentChatId = chatId;
+        }
+        addMessage(message, false);
+        sendMessageToRasa(message);
+        userInput.value = '';
+        noSpeechCount = 0; // Reset no-speech count
+        micInstructions.classList.add('hidden');
+      }
+    });
+
+    // Enter key event
+    userInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        sendButton.click();
+      }
+    });
+
+    // Initialize with a new chat if none exist
+    if (!currentChatId && Object.keys(chats).length === 0) {
+      newChatButton.click();
+    } else {
+      const latestChatId = Object.keys(chats)[Object.keys(chats).length - 1];
+      loadChat(latestChatId);
+    }
+
+    // Check TTS availability on load
+    async function checkTTSAvailability() {
+      try {
+        const response = await fetch('http://localhost:3000/synthesize', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            text: 'Test',
+            languageCode: 'en-US',
+          }),
+        });
+        if (!response.ok) {
+          throw new Error('TTS service unavailable');
+        }
+        ttsAvailable = true;
+        ttsInstructions.classList.add('hidden');
+      } catch (error) {
+        console.error('TTS service check failed:', error);
+        ttsAvailable = false;
+        const lang = languageSelect.options[languageSelect.selectedIndex].getAttribute('data-lang');
+        ttsInstructions.classList.remove('hidden');
+      }
+    }
+
+    checkTTSAvailability();
+  </script>
+</body>
+</html>
