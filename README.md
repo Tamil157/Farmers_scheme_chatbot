@@ -81,7 +81,7 @@ FARMERS_SCHEME_CHATBOT/
 📌 Terminal 3 - Launch Web Interface
 <pre> <code>cd actions python -m http.server 8000 </code> </pre>
 🔗 Then open your browser and go to:
-👉 http://localhost:8000/index.html
+👉 http://127.0.0.1:5500/actions/index.html
 
 
 Example Queries
